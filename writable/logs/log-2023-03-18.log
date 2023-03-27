@@ -1,0 +1,98 @@
+CRITICAL - 2023-03-18 10:28:51 --> Invalid file: "login/main.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login/main.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('login/main', [], true)
+ 3 APPPATH/Controllers/Login.php(9): view('login/main')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Login->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:06:02 --> Invalid file: "candidaturas/vagas.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/vagas.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/vagas', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(9): view('candidaturas/vagas')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->vagas()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:37:18 --> Invalid file: "candidaturas/candidatus.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/candidatus.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/candidatus', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(14): view('candidaturas/candidatus')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->candidatos()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:37:33 --> Invalid file: "candidaturas/candidatus.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/candidatus.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/candidatus', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(14): view('candidaturas/candidatus')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->candidatos()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:39:57 --> Invalid file: "candidaturas/candidatus.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/candidatus.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/candidatus', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(14): view('candidaturas/candidatus')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->candidatos()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:39:59 --> Invalid file: "candidaturas/candidatus.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/candidatus.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/candidatus', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(14): view('candidaturas/candidatus')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->candidatos()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 11:46:14 --> Invalid file: "candidaturas/vagas_perfil.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('candidaturas/vagas_perfil.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/vagas_perfil', [], true)
+ 3 APPPATH/Controllers/Candidaturas.php(14): view('candidaturas/vagas_perfil')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->vagas_perfil('1')
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 13:12:16 --> Too few arguments to function App\Controllers\Vagas::perfil(), 0 passed in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/Vagas.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Vagas->perfil()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vagas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 13:12:55 --> Too few arguments to function App\Controllers\Vagas::perfil(), 0 passed in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/Vagas.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Vagas->perfil()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vagas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 13:13:40 --> Too few arguments to function App\Controllers\Vagas::perfil(), 0 passed in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/Vagas.php on line 12.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Vagas->perfil()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vagas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-03-18 15:19:07 --> Too few arguments to function App\Controllers\Utilizadores::perfil(), 0 passed in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/Utilizadores.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Utilizadores->perfil()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Utilizadores))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

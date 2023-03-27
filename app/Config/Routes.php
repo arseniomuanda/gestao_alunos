@@ -31,6 +31,59 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('utilizadores', static function ($routes) {
+    $routes->get('/', 'Utilizadores::index');
+    $routes->get('(:num)', 'Utilizadores::perfil/$1');
+    $routes->get('resgatar', 'Utilizadores::resgatarpass');
+});
+
+$routes->group('login', static function ($routes) {
+    $routes->get('/', 'Login::index');
+    $routes->get('resgatar', 'Login::resgatarpass');
+});
+
+$routes->group('candidaturas', static function ($routes) {
+   
+    $routes->get('vagas', 'Vagas::index');
+    $routes->get('vagas/(:num)', 'Vagas::perfil/$1');
+    $routes->get('vagas/novo', 'Vagas::adicionar');
+    $routes->get('vagas/(:num)', 'Vagas::perfil/$1');
+
+    $routes->get('candidatos', 'Candidaturas::index');
+    $routes->get('candidatos/(:num)', 'Candidaturas::perfil/$1');
+    $routes->post('novo', 'Candidaturas::adicionar');
+});
+
+$routes->group('escolar', static function ($routes) {
+    $routes->get('cursos', 'Cursos::index');
+    $routes->get('cursos/(:num)', 'Cursos::index');
+    $routes->get('cursos/novo', 'Cursos::index');
+
+    $routes->get('disciplinas', 'Disciplinas::index');
+    $routes->get('disciplinas/(:num)', 'Disciplinas::perfil/$1');
+    $routes->get('disciplinas/novo', 'Disciplinas::index');
+
+    $routes->get('estudantes/', 'Estudantes::index');
+    $routes->get('estudantes/(:num)', 'Estudantes::perfil/$1');
+    $routes->get('estudantes/novo', 'Estudantes::index');
+
+    $routes->get('provas/', 'Provas::index');
+    $routes->get('provas/(:num)', 'Provas::perfil/$1');
+    $routes->get('provas/novo', 'Provas::index');
+    
+});
+
+$routes->group('rh', static function ($routes) {
+    $routes->get('professores', 'Funcionarios::index');
+    $routes->get('professores/(:num)', 'Funcionarios::perfil/$1');
+    $routes->get('professores/novo', 'Funcionarios::index');
+
+    $routes->get('secretarios', 'Funcionarios::index');
+    $routes->get('secretarios/(:num)', 'Funcionarios::perfil/$1');
+    $routes->get('secretarios/novo', 'Funcionarios::index');
+});
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
