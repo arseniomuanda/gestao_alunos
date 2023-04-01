@@ -7,17 +7,18 @@ CREATE TABLE utilizadores (
     rua varchar(50),
     municipio varchar(50),
     n_casa varchar(50),
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     telefone varchar(9),
     bi varchar(14),
     nome varchar(100),
     created_at datetime,
     updated_at datetime,
     deleted_at datetime
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE alunos (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     numero varchar(100),
     dataentrada date,
     datanascimento date,
@@ -29,28 +30,31 @@ CREATE TABLE alunos (
     deleted_at datetime,
     fk_cursos_id int,
     utilizador int UNIQUE
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE funcionarios (
     numero int,
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     created_at datetime,
     updated_at datetime,
     deleted_at datetime,
     fk_categoria_id int,
     utilizador int,
     UNIQUE (id, numero)
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE notas (
     created_at datetime,
     updated_at datetime,
     deleted_at datetime,
     valor double,
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     fk_disciplinas_id int,
     fk_alunos_id int
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE cursos (
     created_at datetime,
@@ -58,37 +62,41 @@ CREATE TABLE cursos (
     deleted_at datetime,
     nome varchar(100),
     cigla char(7),
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     limite_alunos int
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE disciplinas (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(100),
     created_at datetime,
     updated_at datetime,
     deleted_at datetime,
     fk_anos_id int
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE trimestres (
     created_at datetime,
     updated_at datetime,
     deleted_at datetime,
-    id int,
+    id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(100)
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE categoria (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(14),
     created_at datetime,
     updated_at datetime,
     deleted_at datetime
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE anos (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     created_at datetime,
     updated_at datetime,
     deleted_at datetime,
@@ -97,7 +105,7 @@ CREATE TABLE anos (
 );
 
 CREATE TABLE candidatos (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(100),
     email varchar(100),
     telefone varchar(9),
@@ -110,7 +118,8 @@ CREATE TABLE candidatos (
     copia_bi varchar(250),
     declaracao_notas varchar(250),
     certificado varchar(250)
-);
+)ENGINE=InnoDB DEFAULT
+CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
  
 ALTER TABLE alunos ADD CONSTRAINT FK_alunos_2
     FOREIGN KEY (fk_cursos_id)
@@ -118,8 +127,8 @@ ALTER TABLE alunos ADD CONSTRAINT FK_alunos_2
     ON DELETE SET NULL;
  
 ALTER TABLE alunos ADD CONSTRAINT FK_alunos_4
-    FOREIGN KEY (utilizador???)
-    REFERENCES utilizadores (???);
+    FOREIGN KEY (utilizador)
+    REFERENCES utilizadores (id);
  
 ALTER TABLE funcionarios ADD CONSTRAINT FK_funcionarios_2
     FOREIGN KEY (fk_categoria_id)
@@ -127,8 +136,8 @@ ALTER TABLE funcionarios ADD CONSTRAINT FK_funcionarios_2
     ON DELETE CASCADE;
  
 ALTER TABLE funcionarios ADD CONSTRAINT FK_funcionarios_3
-    FOREIGN KEY (utilizador???)
-    REFERENCES utilizadores (???);
+    FOREIGN KEY (utilizador)
+    REFERENCES utilizadores (id);
  
 ALTER TABLE notas ADD CONSTRAINT FK_notas_2
     FOREIGN KEY (fk_disciplinas_id)
