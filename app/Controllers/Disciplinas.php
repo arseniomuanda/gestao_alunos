@@ -11,11 +11,11 @@ class Disciplinas extends BaseController
 
     public function adicionar()
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/disciplinas') . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/disciplina') . view('componentes/footer');
     }
 
     public function perfil($id)
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/disciplinas') . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/disciplina') . view('componentes/footer');
     }
 }

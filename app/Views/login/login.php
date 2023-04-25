@@ -36,6 +36,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script>
+    //const api_be = "http://localhost:8080";
+    if (sessionStorage.logado) {
+      location.href = '/';
+    }
+  </script>
 </head>
 
 <body>
@@ -64,20 +70,20 @@
                     <p class="text-center small">Digita o email e palavra pass</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form onsubmit="event.preventDefault();logar()" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input autocomplete="off" type="text" name="email" value="admin@admin.com" class="form-control" id="email" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input autocomplete="off" type="password" name="password" value="1234" class="form-control" id="password" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -115,6 +121,40 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/vue.js"></script>
+  <script>
+    function logar() {
+      const form = new FormData();
+      form.append("email", document.getElementById('email').value);
+      form.append("password", document.getElementById('password').value);
+
+      const options = {
+        method: 'POST',
+        headers: {},
+        body: form
+      };
+
+      fetch('/api/login', options)
+        .then(response => response.json())
+        .then(response => {
+          if (response.code = 200) {
+
+            sessionStorage.setItem('token', response.token);
+            sessionStorage.setItem('expireAt', response.expireAt);
+            sessionStorage.setItem('now', response.now);
+            sessionStorage.setItem('email', response.email);
+            sessionStorage.setItem('nome', response.nome);
+            sessionStorage.setItem('foto', response.foto);
+            sessionStorage.setItem('username', response.username);
+            sessionStorage.setItem('logado', response.logado);
+            sessionStorage.setItem('id', response.id);
+
+            location = '/';
+          }
+        })
+        .catch(err => console.error(err));
+    }
+  </script>
 
 </body>
 

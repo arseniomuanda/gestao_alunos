@@ -31,9 +31,23 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('api', static function ($routes) {
+    $routes->get('/', 'Home::api');
+    //$routes->get('/', 'Home::api', ['filter' => 'authFilter']);
+    $routes->post('login', 'Login::login');
+
+    $routes->group('funcionario', static function ($routes) {
+        $routes->post('new', 'Funcionarios::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Funcionarios::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('newpassword/(:num)', 'Funcionarios::newPassword/$1', ['filter' => 'authFilter']);
+        $routes->post('resetpassword/(:num)', 'Funcionarios::resetPass/$1', ['filter' => 'authFilter']);
+    });
+});
+
 $routes->group('utilizadores', static function ($routes) {
     $routes->get('/', 'Utilizadores::index');
     $routes->get('(:num)', 'Utilizadores::perfil/$1');
+    $routes->get('resgatar', 'Utilizadores::resgatarpass');
     $routes->get('resgatar', 'Utilizadores::resgatarpass');
 });
 
@@ -43,7 +57,7 @@ $routes->group('login', static function ($routes) {
 });
 
 $routes->group('candidaturas', static function ($routes) {
-   
+
     $routes->get('vagas', 'Vagas::index');
     $routes->get('vagas/(:num)', 'Vagas::perfil/$1');
     $routes->get('vagas/novo', 'Vagas::adicionar');
@@ -56,12 +70,12 @@ $routes->group('candidaturas', static function ($routes) {
 
 $routes->group('escolar', static function ($routes) {
     $routes->get('cursos', 'Cursos::index');
-    $routes->get('cursos/(:num)', 'Cursos::index');
-    $routes->get('cursos/novo', 'Cursos::index');
+    $routes->get('cursos/(:num)', 'Cursos::perfil/$1');
+    $routes->get('cursos/novo', 'Cursos::adicionar');
 
     $routes->get('disciplinas', 'Disciplinas::index');
     $routes->get('disciplinas/(:num)', 'Disciplinas::perfil/$1');
-    $routes->get('disciplinas/novo', 'Disciplinas::index');
+    $routes->get('disciplinas/novo', 'Disciplinas::adicionar');
 
     $routes->get('estudantes/', 'Estudantes::index');
     $routes->get('estudantes/(:num)', 'Estudantes::perfil/$1');
@@ -69,18 +83,13 @@ $routes->group('escolar', static function ($routes) {
 
     $routes->get('provas/', 'Provas::index');
     $routes->get('provas/(:num)', 'Provas::perfil/$1');
-    $routes->get('provas/novo', 'Provas::index');
-    
+    $routes->get('provas/novo', 'Provas::adicionar');
 });
 
 $routes->group('rh', static function ($routes) {
-    $routes->get('professores', 'Funcionarios::index');
-    $routes->get('professores/(:num)', 'Funcionarios::perfil/$1');
-    $routes->get('professores/novo', 'Funcionarios::index');
-
-    $routes->get('secretarios', 'Funcionarios::index');
-    $routes->get('secretarios/(:num)', 'Funcionarios::perfil/$1');
-    $routes->get('secretarios/novo', 'Funcionarios::index');
+    $routes->get('funcionarios', 'Funcionarios::index');
+    $routes->get('funcionarios/(:num)', 'Funcionarios::perfil/$1');
+    $routes->get('funcionarios/novo', 'Funcionarios::adicionar');
 });
 
 

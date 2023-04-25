@@ -11,11 +11,11 @@ class Provas extends BaseController
 
     public function adicionar()
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/provas') . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/prova') . view('componentes/footer');
     }
 
     public function perfil($id)
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/provas') . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/prova') . view('componentes/footer');
     }
 }

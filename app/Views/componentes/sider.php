@@ -63,8 +63,8 @@
               </a>
               <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="/rh/professores">
-                          <i class="bi bi-circle"></i><span>Professores</span>
+                      <a href="/rh/funcionarios">
+                          <i class="bi bi-circle"></i><span>Funcionários</span>
                       </a>
                   </li>
               </ul>
