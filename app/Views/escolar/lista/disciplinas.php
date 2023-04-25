@@ -28,7 +28,7 @@
 
                   <div class="card">
                       <div class="card-body">
-                          
+
                           <!-- Table with stripped rows -->
                           <table class="table datatable">
                               <thead>
@@ -36,34 +36,23 @@
                                       <th scope="col">#</th>
                                       <th scope="col">Name</th>
                                       <th scope="col">Ano</th>
+                                      <th scope="col">Curso</th>
+                                      <th colspan="2" scope="col">Opção</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <th scope="row">1</th>
-                                      <td>Brandon Jacob</td>
-                                      <td>Designer</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">2</th>
-                                      <td>Bridie Kessler</td>
-                                      <td>Developer</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">3</th>
-                                      <td>Ashleigh Langosh</td>
-                                      <td>Finance</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">4</th>
-                                      <td>Angus Grady</td>
-                                      <td>HR</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">5</th>
-                                      <td>Raheem Lehner</td>
-                                      <td>Dynamic Division Officer</td>
-                                  </tr>
+
+                                  <?php $index = 0;
+                                    foreach ($disciplinas as $key => $value) {  ?>
+                                      <tr>
+                                          <th scope="row"><?= ++$index ?></th>
+                                          <td><?= $value->nome ?></td>
+                                          <td><?= $value->ano ?></td>
+                                          <td><?= $value->curso ?></td>
+                                          <td><button onclick="vue_app.removeCurso(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                          <td><a href="/escolar/disciplinas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                      </tr>
+                                  <?php } ?>
                               </tbody>
                           </table>
                           <!-- End Table with stripped rows -->

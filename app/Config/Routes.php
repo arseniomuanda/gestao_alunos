@@ -43,6 +43,18 @@ $routes->group('api', static function ($routes) {
         $routes->post('resetpassword/(:num)', 'Funcionarios::resetPass/$1', ['filter' => 'authFilter']);
         $routes->post('remove/(:num)', 'Funcionarios::remove/$1', ['filter' => 'authFilter']);
     });
+
+    $routes->group('cursos', static function ($routes) {
+        $routes->post('new', 'Cursos::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Cursos::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Cursos::remove/$1', ['filter' => 'authFilter']);
+    });
+
+    $routes->group('disciplinas', static function ($routes) {
+        $routes->post('new', 'Disciplinas::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Disciplinas::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Disciplinas::remove/$1', ['filter' => 'authFilter']);
+    });
 });
 
 $routes->group('utilizadores', static function ($routes) {

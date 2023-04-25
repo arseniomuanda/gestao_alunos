@@ -46,7 +46,7 @@
                                           <th scope="row"><?= ++$index ?></th>
                                           <td><?= $value->nome ?></td>
                                           <td><?= $value->categoria ?></td>
-                                          <td><button onclick="vue_app.remove(<?= $value->id?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                          <td><button onclick="vue_app.removeFuncionario(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
                                           <td><a href="/rh/funcionarios/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php } ?>

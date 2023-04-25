@@ -64,6 +64,7 @@ class Cursos extends ResourceController
             'nome' => $this->request->getPost('nome'),
             'sigla' => $this->request->getPost('sigla'),
             'limite_alunos' => $this->request->getPost('limite_alunos'),
+            'criadopor' => $user->id,
         ];
 
         cleanarray($data);
@@ -76,6 +77,47 @@ class Cursos extends ResourceController
         return $this->respond($resposta, 200);
     }
 
+    public function actualizar($id)
+    {
+        helper('funcao');
+        $user = getUserToken();
+
+        if ($user->id != 1) {
+            return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
+        }
+
+        $data = [
+            'id' => $id,
+            'nome' => $this->request->getPost('nome'),
+            'sigla' => $this->request->getPost('sigla'),
+            'limite_alunos' => $this->request->getPost('limite_alunos'),
+            'criadopor' => $user->id,
+        ];
+
+        cleanarray($data);
+
+        $resposta = updatenomal($this->cursoModel, $data, $this->auditoriaModel);
+        if ($resposta['code'] !== 200) {
+            return $this->respond(returnVoid($resposta, (int) 400), 400);
+        }
+
+        return $this->respond($resposta, 200);
+    }
+
+    public function remove($id)
+    {
+        helper('funcao');
+        $user = getUserToken();
+
+        if ($user->id != 1) {
+            return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
+        }
+
+
+        deletarnormal($id, $this->db, $this->cursoModel, $user->id, $this->auditoriaModel);
+        return $this->respond([], 200);
+    }
+
     public function adicionar()
     {
         return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/cursos') . view('componentes/footer');
@@ -83,6 +125,9 @@ class Cursos extends ResourceController
 
     public function perfil($id)
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/cursos') . view('componentes/footer');
+        $data = [
+            'curso' => $this->db->query("SELECT `cursos`.*, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos`, (SELECT COUNT(*) FROM `disciplinas` WHERE `curso` = `cursos`.`id`) AS `qtd_disciplinas` FROM `cursos` WHERE `id` = $id")->getRow(0)
+        ];
+        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/cursos', $data) . view('componentes/footer');
     }
 }

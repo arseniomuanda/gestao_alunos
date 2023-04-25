@@ -38,6 +38,7 @@
                                       <th scope="col">Sigla</th>
                                       <th scope="col">Limite de alunos</th>
                                       <th scope="col">Nº de Alunos</th>
+                                      <th colspan="2" scope="col">Opção</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -49,8 +50,8 @@
                                           <td><?= $value->sigla ?></td>
                                           <td><?= $value->limite_alunos ?></td>
                                           <td><?= $value->qtd_alunos ?></td>
-                                          <td><button onclick="vue_app.remove(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
-                                          <td><a href="/rh/funcionarios/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                          <td><button onclick="vue_app.removeCurso(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                          <td><a href="/escolar/cursos/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php } ?>
                               </tbody>
