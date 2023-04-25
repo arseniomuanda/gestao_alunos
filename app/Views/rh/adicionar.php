@@ -22,24 +22,24 @@
                           <form onsubmit="event.preventDefault(),vue_app.addFuncionario()" class="row g-3">
                               <div class="col-md-12">
                                   <label for="inputName5" class="form-label">Nome</label>
-                                  <input type="text" class="form-control" name="nome" id="nome">
+                                  <input required type="text" class="form-control" name="nome" id="nome">
                               </div>
                               <div class="col-md-6">
                                   <label for="inputName5" class="form-label">Numero</label>
-                                  <input type="text" class="form-control" name="numero" id="numero">
+                                  <input required type="text" class="form-control" name="numero" id="numero">
                               </div>
                               <div class="col-md-6">
                                   <label for="inputName5" class="form-label">Função</label>
-                                  <select type="text" class="form-control" name="categoria" id="categoria">
-                                    <option>Slecionar Função</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Professor</option>
-                                    <option value="3">Secretário</option>
+                                  <select required type="text" class="form-control" name="categoria" id="categoria">
+                                      <option>Selecionar Função</option>
+                                      <option value="1">Admin</option>
+                                      <option value="2">Professor</option>
+                                      <option value="3">Secretário</option>
                                   </select>
                               </div>
                               <div class="col-md-6">
                                   <label for="telefone" class="form-label">Telefone</label>
-                                  <input type="text" class="form-control" name="telefone" id="telefone">
+                                  <input required type="text" class="form-control" name="telefone" id="telefone">
                               </div>
                               <div class="col-md-6">
                                   <label for="bi" class="form-label">BI</label>
@@ -47,22 +47,23 @@
                               </div>
                               <div class="col-md-6">
                                   <label for="inputName5" class="form-label">Sexo</label>
-                                  <select type="text" class="form-control" name="sexo" id="sexo">
-                                    <option value="M">Masculino</option>
-                                    <option value="F">Feminino</option>
+                                  <select required type="text" class="form-control" name="sexo" id="sexo">
+                                    <option></option>
+                                      <option value="M">Masculino</option>
+                                      <option value="F">Feminino</option>
                                   </select>
                               </div>
                               <div class="col-md-6">
                                   <label for="email" class="form-label">E-mail</label>
-                                  <input type="email" class="form-control" name="email" id="email">
+                                  <input required type="email" class="form-control" name="email" id="email">
                               </div>
                               <div class="col-md-6">
                                   <label for="municipio" class="form-label">Município</label>
-                                  <input type="text" min="1" class="form-control" name="municipio" id="municipio">
+                                  <input required type="text" min="1" class="form-control" name="municipio" id="municipio">
                               </div>
                               <div class="col-md-6">
                                   <label for="bairro" class="form-label">Bairro</label>
-                                  <input type="text" min="1" class="form-control" name="bairro" id="bairro">
+                                  <input required type="text" min="1" class="form-control" name="bairro" id="bairro">
                               </div>
                               <div class="col-md-6">
                                   <label for="rua" class="form-label">Rua</label>

@@ -33,14 +33,15 @@ $routes->get('/', 'Home::index');
 
 $routes->group('api', static function ($routes) {
     $routes->get('/', 'Home::api');
-    //$routes->get('/', 'Home::api', ['filter' => 'authFilter']);
     $routes->post('login', 'Login::login');
+    $routes->post('logout', 'Login::logout', ['filter' => 'authFilter']);
 
     $routes->group('funcionario', static function ($routes) {
         $routes->post('new', 'Funcionarios::add', ['filter' => 'authFilter']);
         $routes->post('update/(:num)', 'Funcionarios::actualizar/$1', ['filter' => 'authFilter']);
         $routes->post('newpassword/(:num)', 'Funcionarios::newPassword/$1', ['filter' => 'authFilter']);
         $routes->post('resetpassword/(:num)', 'Funcionarios::resetPass/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Funcionarios::remove/$1', ['filter' => 'authFilter']);
     });
 });
 

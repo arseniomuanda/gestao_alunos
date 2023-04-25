@@ -159,7 +159,7 @@ class Login extends ResourceController
                     'message'   => 'User não encontrado!'
                 ];
 
-                return $this->respond($data, 401);
+                return $this->respond(returnVoid($data, 401), 401);
             }
         } else {
             $data = [
@@ -167,7 +167,7 @@ class Login extends ResourceController
                 'message'   => 'User não encontrado!',
             ];
 
-            return $this->respond($data, 401);
+            return $this->respond(returnVoid($data, 401), 401);
         }
     }
 
@@ -180,9 +180,10 @@ class Login extends ResourceController
     {
         helper('funcao');
         $user = getUserToken();
-        print_r($user);
+
         $this->session->destroy();
-        $this->db->query("UPDATE " . $this->model->table . " SET `api_token`= '' WHERE id = $user->id");;
-        return $this->respond([]);
+        $this->db->query("UPDATE " . $this->model->table . " SET `api_token`= '' WHERE id = $user->id");
+
+        return $this->respond([],200);
     }
 }

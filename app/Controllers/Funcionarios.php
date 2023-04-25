@@ -63,24 +63,24 @@ class Funcionarios extends ResourceController
         helper('funcao');
         $user = getUserToken();
 
-        if($user->id != 1){
+        if ($user->id != 1) {
             return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
         }
-        
+
 
         $password = $this->request->getPost('password') ?? '1234';
         $password = password_hash($password, PASSWORD_BCRYPT);
 
         $userData = [
             'password' =>  $password,
-            'email' => $this->request->getPost('email'), 
-            'bairro' => $this->request->getPost('bairro'), 
-            'rua' => $this->request->getPost('rua'), 
-            'municipio' => $this->request->getPost('municipio'), 
-            'n_casa' => $this->request->getPost('n_casa'), 
-            'telefone' => $this->request->getPost('telefone'), 
-            'bi' => $this->request->getPost('bi'), 
-            'sexo' => $this->request->getPost('sexo'), 
+            'email' => $this->request->getPost('email'),
+            'bairro' => $this->request->getPost('bairro'),
+            'rua' => $this->request->getPost('rua'),
+            'municipio' => $this->request->getPost('municipio'),
+            'n_casa' => $this->request->getPost('n_casa'),
+            'telefone' => $this->request->getPost('telefone'),
+            'bi' => $this->request->getPost('bi'),
+            'sexo' => $this->request->getPost('sexo'),
             'nome' => $this->request->getPost('nome'),
             'criadopor' => $user->id
         ];
@@ -94,8 +94,8 @@ class Funcionarios extends ResourceController
         }
 
         $data = [
-            'numero' => $this->request->getPost('numero'), 
-            'categoria' => $this->request->getPost('categoria'), 
+            'numero' => $this->request->getPost('numero'),
+            'categoria' => $this->request->getPost('categoria'),
             'utilizador' => $userResult['id'],
             'criadopor' => $user->id
         ];
@@ -105,6 +105,7 @@ class Funcionarios extends ResourceController
         $result = cadastronormal($this->funcionarioModel, $data, $this->db, $this->auditoriaModel);
         if ($result['code'] !== 200) {
             $data['product'] = $result;
+            deletarnormal($userResult['id'], $this->db, $this->utilizadorModel, $user->id, $this->auditoriaModel);
             return $this->respond(returnVoid($data, (int) 400), 400);
         }
         return $this->respond($result, 200);
@@ -115,7 +116,7 @@ class Funcionarios extends ResourceController
         helper('funcao');
         $user = getUserToken();
 
-        if($user->id != 1){
+        if ($user->id != 1) {
             return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
         }
 
@@ -123,15 +124,15 @@ class Funcionarios extends ResourceController
 
         $foto = $this->request->getFile('foto');
         $userData = [
-            'id' => $func->utilizador, 
-            'email' => $this->request->getPost('email'), 
-            'bairro' => $this->request->getPost('bairro'), 
-            'rua' => $this->request->getPost('rua'), 
-            'municipio' => $this->request->getPost('municipio'), 
-            'n_casa' => $this->request->getPost('n_casa'), 
-            'telefone' => $this->request->getPost('telefone'), 
-            'bi' => $this->request->getPost('bi'), 
-            'sexo' => $this->request->getPost('sexo'), 
+            'id' => $func->utilizador,
+            'email' => $this->request->getPost('email'),
+            'bairro' => $this->request->getPost('bairro'),
+            'rua' => $this->request->getPost('rua'),
+            'municipio' => $this->request->getPost('municipio'),
+            'n_casa' => $this->request->getPost('n_casa'),
+            'telefone' => $this->request->getPost('telefone'),
+            'bi' => $this->request->getPost('bi'),
+            'sexo' => $this->request->getPost('sexo'),
             'nome' => $this->request->getPost('nome'),
             'criadopor' => $user->id
         ];
@@ -145,7 +146,7 @@ class Funcionarios extends ResourceController
         }
 
         $data = [
-            'id' => $id, 
+            'id' => $id,
             'numero' => $this->request->getPost('numero'),
             'criadopor' => $user->id
         ];
@@ -197,7 +198,7 @@ class Funcionarios extends ResourceController
 
         $userD = $this->db->query("SELECT * FROM " . $this->utilizadorModel->table . " WHERE id = $func->utilizador")->getRow(0);
 
-        if(password_verify($oldPass, $userD->password)){
+        if (password_verify($oldPass, $userD->password)) {
             $userData = [
                 'id' => $userD->id,
                 'password' => $newPass,
@@ -210,10 +211,33 @@ class Funcionarios extends ResourceController
                 return $this->respond(returnVoid($data, (int) 400), 400);
             }
             return $this->respond($data, 200);
-        }else{
+        } else {
             return $this->respond(returnVoid([], (int) 401), 401);
         }
-        
+    }
+
+    public function remove($id)
+    {
+        helper('funcao');
+        $user = getUserToken();
+
+        if ($user->id != 1) {
+            return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
+        }
+        $func = $this->db->query("SELECT * FROM " . $this->funcionarioModel->table . " WHERE id = $id")->getRow(0);
+
+        $userD = $this->db->query("SELECT * FROM " . $this->utilizadorModel->table . " WHERE id = $func->utilizador")->getRow(0);
+
+
+        $del1 = deletarnormal($id, $this->db, $this->funcionarioModel, $user->id, $this->auditoriaModel);
+        if($del1){
+            $del2 = deletarnormal($userD->id, $this->db, $this->utilizadorModel, $user->id, $this->auditoriaModel);
+            if($del2){
+                return $this->respond([],200);
+            }
+        }
+
+        return $this->respond(returnVoid([], 401), 200);
     }
 
     public function perfil($id)

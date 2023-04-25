@@ -183,9 +183,9 @@
                                      </div>
 
                                      <div class="row mb-3">
-                                         <label for="foto" class="col-md-4 col-lg-3 col-form-label">Fotografia Tipo Pass</label>
+                                         <label for="foto_pass" class="col-md-4 col-lg-3 col-form-label">Fotografia Tipo Pass</label>
                                          <div class="col-md-8 col-lg-9">
-                                             <input name="foto" type="file" class="form-control" id="foto">
+                                             <input name="foto_pass" type="file" class="form-control" id="foto_pass">
                                          </div>
                                      </div>
 

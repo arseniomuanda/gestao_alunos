@@ -17,9 +17,8 @@
                   <div class="card">
                       <div class="card-body">
                           <h5 class="card-title">Dados</h5>
-
                           <!-- Multi Columns Form -->
-                          <form class="row g-3">
+                          <form onsubmit="event.preventDefault();vue_app.addCurso()" class="row g-3">
                               <div class="col-md-12">
                                   <label for="inputName5" class="form-label">Nome</label>
                                   <input type="text" class="form-control" name="nome" id="nome">
@@ -33,7 +32,7 @@
                                   <input type="number" min="1" class="form-control" name="limite_alunos" id="limite_alunos">
                               </div>
                               <div class="text-center">
-                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  <button type="submit" class="btn btn-primary">Salvar</button>
                                   <button type="reset" class="btn btn-secondary">Reset</button>
                               </div>
                           </form><!-- End Multi Columns Form -->

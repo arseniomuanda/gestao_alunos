@@ -137,8 +137,8 @@
       fetch('/api/login', options)
         .then(response => response.json())
         .then(response => {
-          if (response.code = 200) {
-
+          if (response.code == 200) {
+            console.log(response);
             sessionStorage.setItem('token', response.token);
             sessionStorage.setItem('expireAt', response.expireAt);
             sessionStorage.setItem('now', response.now);
@@ -149,7 +149,7 @@
             sessionStorage.setItem('logado', response.logado);
             sessionStorage.setItem('id', response.id);
 
-            location = '/';
+            location.reload();
           }
         })
         .catch(err => console.error(err));

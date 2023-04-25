@@ -8,11 +8,28 @@ var vue_header = new Vue({
             token: sessionStorage.token,
             firma: sessionStorage.firma,
             nome: sessionStorage.nome,
+            foto: sessionStorage.foto,
             id: sessionStorage.id,
             notification: []
         }
     },
     methods:{
+        logout: async function () {
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }
+            };
+
+            fetch(`/api/logout`, options)
+                .then(response => response.json())
+                .then(response => {
+                        sessionStorage.clear()
+                        location.reload();
+                })
+                .catch(err => console.error(err));
+        }
     },
     mounted() {
         // this.getDashboard()
@@ -66,10 +83,36 @@ var vue_app = new Vue({
                 })
                 .catch(err => console.error(err));
         },
+        addCurso: async function(){
+            //return alert(1);
+            const form = new FormData();
+            form.append("nome", document.getElementById('nome').value);
+            form.append("sigla", document.getElementById('sigla').value);
+            form.append("limite_alunos", document.getElementById('limite_alunos').value);
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}` 
+                }
+            };
+
+            options.body = form;
+
+            fetch('/api/cursos/new', options)
+                .then(response => response.json())
+                .then(response =>{
+                    if(response.code == 200){
+                        location = '/escolar/cursos' + response.id;
+                    }
+                    console.log(response);
+                })
+                .catch(err => console.error(err));
+        },
         editFuncionario: async function(id){
             //return alert(1);
 
-            let foto = document.getElementById('foto');
+            let foto = document.getElementById('foto_pass');
             const form = new FormData();
             form.append('nome', document.getElementById('nome').value);
             form.append('numero', document.getElementById('numero').value);
@@ -97,6 +140,7 @@ var vue_app = new Vue({
                 .then(response => response.json())
                 .then(response =>{
                     if(response.code == 200){
+                        console.log(response);
                         location.reload();
                     }
                     console.log(response);
@@ -155,6 +199,32 @@ var vue_app = new Vue({
                     console.log(response);
                 })
                 .catch(err => console.error(err));
+        },
+        remove: async function (id) {
+
+            let op = confirm('Delesa eliminar este utilizador?');
+
+            if(op){
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${sessionStorage.token}`
+                    }
+                };
+
+                fetch(`/api/funcionario/remove/${id}`, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        if (response.code == 200) {
+                            location.reload();
+                        }
+                        console.log(response);
+                    })
+                    .catch(err => console.error(err));
+            }else{
+            return false;
+            }
+            
         }
     },
     mounted() {

@@ -232,7 +232,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="/utilizadores/1">
+                            <a class="dropdown-item d-flex align-items-center" :href="'/utilizadores/'+id">
                                 <i class="bi bi-person"></i>
                                 <span>Meu Porfil</span>
                             </a>
@@ -248,7 +248,7 @@
                         </li>
 
                         <li>
-                            <a onclick="sessionStorage.clear()" class="dropdown-item d-flex align-items-center" href="/login">
+                            <a onclick="vue_header.logout()" class="dropdown-item d-flex align-items-center">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sair</span>
                             </a>
