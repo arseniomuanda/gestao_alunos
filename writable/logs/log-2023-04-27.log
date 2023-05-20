@@ -1,0 +1,80 @@
+CRITICAL - 2023-04-27 07:23:06 --> Undefined variable $estudantes
+in APPPATH/Views/escolar/lista/alunos.php on line 46.
+ 1 APPPATH/Views/escolar/lista/alunos.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estudantes', 'APPPATH/Views/escolar/lista/alunos.php', 46)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/alunos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 5 APPPATH/Controllers/Alunos.php(9): view('escolar/lista/alunos')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:03:58 --> Invalid file: "escolar/lista/alunos.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('escolar/lista/alunos.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 3 APPPATH/Controllers/Alunos.php(9): view('escolar/lista/alunos')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:04:18 --> Invalid file: "escolar/lista/alunos.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('escolar/lista/alunos.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 3 APPPATH/Controllers/Alunos.php(9): view('escolar/lista/alunos')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:04:37 --> Invalid file: "escolar/lista/alunos.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('escolar/lista/alunos.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 3 APPPATH/Controllers/Alunos.php(9): view('escolar/lista/alunos')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:05:03 --> Undefined variable $estudantes
+in APPPATH/Views/escolar/lista/alunos.php on line 46.
+ 1 APPPATH/Views/escolar/lista/alunos.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estudantes', 'APPPATH/Views/escolar/lista/alunos.php', 46)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/alunos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 5 APPPATH/Controllers/Alunos.php(9): view('escolar/lista/alunos')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:11:32 --> Class "App\Controllers\Database" not found
+in APPPATH/Controllers/Alunos.php on line 37.
+ 1 SYSTEMPATH/CodeIgniter.php(906): App\Controllers\Alunos->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:11:48 --> Call to undefined method CodeIgniter\Database\Database::connect()
+in APPPATH/Controllers/Alunos.php on line 39.
+ 1 SYSTEMPATH/CodeIgniter.php(906): App\Controllers\Alunos->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-04-27 18:13:23 --> Undefined variable $estudantes
+in APPPATH/Views/escolar/lista/alunos.php on line 46.
+ 1 APPPATH/Views/escolar/lista/alunos.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estudantes', 'APPPATH/Views/escolar/lista/alunos.php', 46)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/alunos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/alunos', [], true)
+ 5 APPPATH/Controllers/Alunos.php(48): view('escolar/lista/alunos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

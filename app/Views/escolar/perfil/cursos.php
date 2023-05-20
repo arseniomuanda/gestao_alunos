@@ -1,7 +1,7 @@
  <main id="main" class="main">
 
      <div class="pagetitle">
-         <h1>Profile</h1>
+         <h1>Perfil</h1>
          <nav>
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -18,7 +18,7 @@
                  <div class="card">
                      <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                         <!-- <img src="" alt="Profile" class="rounded-circle"> -->
+                         <!-- <img src="" alt="Perfil" class="rounded-circle"> -->
                          <h2><?= $curso->nome ?> - <?= $curso->sigla ?></h2>
                          <h3>Limite de alunos <?= $curso->limite_alunos ?></h3>
                          <!-- <div class="social-links mt-2">
@@ -66,7 +66,7 @@
                                  <h5 class="card-title">Descrição</h5>
                                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
                                  
-                                 <h5 class="card-title">Dados do cadidato</h5>
+                                 <h5 class="card-title">Dados do curso</h5>
 
                                  <div class="row">
                                      <div class="col-lg-3 col-md-4 label ">Nome</div>
@@ -97,7 +97,7 @@
 
                              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                                 <!-- Profile Edit Form -->
+                                 <!-- Perfil Edit Form -->
                                  <form onsubmit="event.preventDefault();vue_app.editCurso(<?= $curso->id ?>)">
                                      <div class="row mb-3">
                                          <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
@@ -124,7 +124,7 @@
                                      <div class="text-center">
                                          <button type="submit" class="btn btn-primary">Salvar</button>
                                      </div>
-                                 </form><!-- End Profile Edit Form -->
+                                 </form><!-- End Perfil Edit Form -->
 
                              </div>
 

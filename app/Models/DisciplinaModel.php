@@ -14,7 +14,7 @@ class DisciplinaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nome', 'ano'];
+    protected $allowedFields    = ['nome', 'ano', 'curso'];
 
     // Dates
     protected $useTimestamps = false;

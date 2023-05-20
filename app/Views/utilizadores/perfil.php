@@ -1,12 +1,12 @@
  <main id="main" class="main">
 
      <div class="pagetitle">
-         <h1>Profile</h1>
+         <h1>Perfil</h1>
          <nav>
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                  <li class="breadcrumb-item">Users</li>
-                 <li class="breadcrumb-item active">Profile</li>
+                 <li class="breadcrumb-item active">Perfil</li>
              </ol>
          </nav>
      </div><!-- End Page Title -->
@@ -18,7 +18,7 @@
                  <div class="card">
                      <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                         <img src="<?= $utilizador->foto ?>" alt="Profile" class="rounded-circle">
+                         <img src="<?= $utilizador->foto ?>" alt="Perfil" class="rounded-circle">
                          <h2><?= $utilizador->nome ?></h2>
                          <h3><?= $utilizador->email ?></h3>
                          <!-- <div class="social-links mt-2">
@@ -94,7 +94,7 @@
 
                              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                                 <!-- Profile Edit Form -->
+                                 <!-- Perfil Edit Form -->
                                  <form onsubmit="event.preventDefault();vue_app.editutilizador(<?= $utilizador->id ?>)">
                                      <div class="row mb-3">
                                          <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome Completo</label>
@@ -181,7 +181,7 @@
                                      <div class="text-center">
                                          <button type="submit" class="btn btn-primary">Salvar</button>
                                      </div>
-                                 </form><!-- End Profile Edit Form -->
+                                 </form><!-- End Perfil Edit Form -->
 
                              </div>
 

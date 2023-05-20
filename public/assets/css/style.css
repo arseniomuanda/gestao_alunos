@@ -13,6 +13,14 @@
   scroll-behavior: smooth;
 }
 
+fieldset,
+legend {
+  all: revert;
+}
+.reset {
+  all: revert;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;

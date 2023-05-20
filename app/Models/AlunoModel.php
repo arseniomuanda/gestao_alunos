@@ -14,7 +14,7 @@ class AlunoModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['numero', 'dataentrada', 'datanascimento', 'nome_pai', 'nome_mae', 'nome_encarregado', 'telefone_encarregado', 'atestado_medico', 'foto_tipo_pass', 'copia_bi', 'declaracao_notas', 'certificado', 'created_at', 'updated_at', 'deleted_at', 'curso', 'utilizador'];
+    protected $allowedFields    = ['numero', 'dataentrada', 'datanascimento', 'nome_pai', 'nome_mae', 'nome_encarregado', 'telefone_encarregado', 'atestado_medico', 'foto_tipo_pass', 'copia_bi', 'declaracao_notas', 'certificado', 'created_at', 'updated_at', 'deleted_at', 'curso', 'turma', 'utilizador'];
 
     // Dates
     protected $useTimestamps = false;

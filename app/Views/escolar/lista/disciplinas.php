@@ -41,7 +41,6 @@
                                   </tr>
                               </thead>
                               <tbody>
-
                                   <?php $index = 0;
                                     foreach ($disciplinas as $key => $value) {  ?>
                                       <tr>
@@ -49,7 +48,7 @@
                                           <td><?= $value->nome ?></td>
                                           <td><?= $value->ano ?></td>
                                           <td><?= $value->curso ?></td>
-                                          <td><button onclick="vue_app.removeCurso(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                          <td><button onclick="vue_app.removeDisciplica(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
                                           <td><a href="/escolar/disciplinas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php } ?>

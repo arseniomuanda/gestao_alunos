@@ -1,0 +1,323 @@
+INFO - 2023-05-10 19:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-10 19:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-10 19:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-10 20:08:07 --> mysqli_sql_exception: Unknown column 'disciplinas.nome' in 'field list' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->index()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 20:08:07 --> Unknown column 'disciplinas.nome' in 'field list'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas`')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 20:17:31 --> mysqli_sql_exception: Table 'gestao_alunos.ano' doesn't exist in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->index()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 20:17:31 --> Table 'gestao_alunos.ano' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas` INNER JOIN disciplinas ON provas.disciplina = disciplinas.id INNER JOIN ano ON provas.ano = anos.id INNER JOIN trimestre')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 20:18:11 --> mysqli_sql_exception: Table 'gestao_alunos.trimestre' doesn't exist in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->index()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 20:18:11 --> Table 'gestao_alunos.trimestre' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas` INNER JOIN disciplinas ON provas.disciplina = disciplinas.id INNER JOIN anos ON provas.ano = anos.id INNER JOIN trimestre')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 20:18:44 --> mysqli_sql_exception: Table 'gestao_alunos.trimestre' doesn't exist in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->index()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 20:18:44 --> Table 'gestao_alunos.trimestre' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(48): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas` INNER JOIN disciplinas ON provas.disciplina = disciplinas.id INNER JOIN anos ON provas.ano = anos.id INNER JOIN trimestre ON provas.trimestre = trimestres.id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 21:11:12 --> mysqli_sql_exception: Table 'gestao_alunos.disciplicas' doesn't exist in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT * FROM d...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM d...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM d...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Cursos.php(126): CodeIgniter\Database\BaseConnection->query('SELECT * FROM d...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Cursos->getDisciplina('7')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 21:11:12 --> Table 'gestao_alunos.disciplicas' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Cursos.php(126): CodeIgniter\Database\BaseConnection->query('SELECT * FROM disciplicas WHERE curso = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->getDisciplina('7')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 21:14:18 --> mysqli_sql_exception: Column 'trimestre' cannot be null in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save(Array)
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(87): cadastronormal(Object(App\Models\ProvaModel), Array, Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+#10 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->add()
+#11 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#12 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#15 {main}
+CRITICAL - 2023-05-10 21:14:18 --> Column 'trimestre' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `provas` (`nome`, `ano`, `disciplina`, `trimestre`) VALUES (:nome:, :ano:, :disciplina:, :trimestre:)', [...], false)
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save([...])
+ 7 APPPATH/Controllers/Provas.php(87): cadastronormal(Object(App\Models\ProvaModel), [...], Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->add()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 21:14:28 --> mysqli_sql_exception: Column 'trimestre' cannot be null in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save(Array)
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(87): cadastronormal(Object(App\Models\ProvaModel), Array, Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+#10 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->add()
+#11 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#12 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#15 {main}
+CRITICAL - 2023-05-10 21:14:28 --> Column 'trimestre' cannot be null
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `provas` (`nome`, `ano`, `disciplina`, `trimestre`) VALUES (:nome:, :ano:, :disciplina:, :trimestre:)', [...], false)
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save([...])
+ 7 APPPATH/Controllers/Provas.php(87): cadastronormal(Object(App\Models\ProvaModel), [...], Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->add()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:28:48 --> Undefined array key "HTTP_AUTHORIZATION"
+in APPPATH/Filters/AuthFilter.php on line 31.
+ 1 APPPATH/Filters/AuthFilter.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "HTTP_AUTHORIZATION"', 'APPPATH/Filters/AuthFilter.php', 31)
+ 2 SYSTEMPATH/Filters/Filters.php(173): App\Filters\AuthFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 3 SYSTEMPATH/CodeIgniter.php(473): CodeIgniter\Filters\Filters->run('api/cursos/disciplina/8', 'before')
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:37:36 --> Undefined property: stdClass::$curso
+in APPPATH/Views/escolar/lista/provas.php on line 53.
+ 1 APPPATH/Views/escolar/lista/provas.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$curso', 'APPPATH/Views/escolar/lista/provas.php', 53)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/provas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/provas', [], true)
+ 5 APPPATH/Controllers/Provas.php(50): view('escolar/lista/provas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:38:42 --> Undefined property: stdClass::$Disciplina
+in APPPATH/Views/escolar/lista/provas.php on line 52.
+ 1 APPPATH/Views/escolar/lista/provas.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Disciplina', 'APPPATH/Views/escolar/lista/provas.php', 52)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/provas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/provas', [], true)
+ 5 APPPATH/Controllers/Provas.php(50): view('escolar/lista/provas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:38:49 --> Undefined property: stdClass::$Disciplina
+in APPPATH/Views/escolar/lista/provas.php on line 52.
+ 1 APPPATH/Views/escolar/lista/provas.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Disciplina', 'APPPATH/Views/escolar/lista/provas.php', 52)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/provas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/provas', [], true)
+ 5 APPPATH/Controllers/Provas.php(50): view('escolar/lista/provas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:38:51 --> Undefined property: stdClass::$Disciplina
+in APPPATH/Views/escolar/lista/provas.php on line 52.
+ 1 APPPATH/Views/escolar/lista/provas.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Disciplina', 'APPPATH/Views/escolar/lista/provas.php', 52)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/lista/provas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/lista/provas', [], true)
+ 5 APPPATH/Controllers/Provas.php(50): view('escolar/lista/provas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:45:56 --> Attempt to read property "nome" on null
+in APPPATH/Views/escolar/perfil/cursos.php on line 22.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nome" on null', 'APPPATH/Views/escolar/perfil/cursos.php', 22)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(142): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('1')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:47:03 --> Attempt to read property "nome" on null
+in APPPATH/Views/escolar/perfil/cursos.php on line 22.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nome" on null', 'APPPATH/Views/escolar/perfil/cursos.php', 22)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(142): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('1')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 21:48:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE cursos.id = 2' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(69): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->perfil('2')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 21:48:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE cursos.id = 2' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(69): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas` INNER JOIN disciplinas ON provas.disciplina = disciplinas.id INNER JOIN anos ON provas.ano = anos.id INNER JOIN trimestres ON provas.trimestre = trimestres.id ORDER BY provas.ano, provas.trimestre WHERE cursos.id = 2;')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->perfil('2')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-05-10 21:50:52 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE provas.id = 2' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT provas.*...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT provas.*...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT provas.*...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Provas.php(69): CodeIgniter\Database\BaseConnection->query('SELECT provas.*...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Provas->perfil('2')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-05-10 21:50:52 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE provas.id = 2' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Provas.php(69): CodeIgniter\Database\BaseConnection->query('SELECT provas.*, disciplinas.nome disciplina, anos.nome ano, trimestres.nome trimestre FROM `provas` INNER JOIN disciplinas ON provas.disciplina = disciplinas.id INNER JOIN anos ON provas.ano = anos.id INNER JOIN trimestres ON provas.trimestre = trimestres.id ORDER BY provas.ano, provas.trimestre WHERE provas.id = 2;')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->perfil('2')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:51:10 --> Attempt to read property "nome" on array
+in APPPATH/Views/escolar/perfil/prova.php on line 4.
+ 1 APPPATH/Views/escolar/perfil/prova.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nome" on array', 'APPPATH/Views/escolar/perfil/prova.php', 4)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/prova.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/prova', [], true)
+ 5 APPPATH/Controllers/Provas.php(71): view('escolar/perfil/prova', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->perfil('2')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 21:59:04 --> Undefined property: stdClass::$trismestre
+in APPPATH/Views/escolar/perfil/prova.php on line 121.
+ 1 APPPATH/Views/escolar/perfil/prova.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$trismestre', 'APPPATH/Views/escolar/perfil/prova.php', 121)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/prova.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/prova', [], true)
+ 5 APPPATH/Controllers/Provas.php(71): view('escolar/perfil/prova', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->perfil('1')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-05-10 22:00:23 --> Undefined variable $value
+in APPPATH/Views/escolar/perfil/prova.php on line 46.
+ 1 APPPATH/Views/escolar/perfil/prova.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $value', 'APPPATH/Views/escolar/perfil/prova.php', 46)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/prova.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/prova', [], true)
+ 5 APPPATH/Controllers/Provas.php(71): view('escolar/perfil/prova', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Provas->perfil('1')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Provas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

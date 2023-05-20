@@ -5,7 +5,7 @@
           <li class="nav-item">
               <a class="nav-link " href="/">
                   <i class="bi bi-grid"></i>
-                  <span>Dashboard</span>
+                  <span>Início</span>
               </a>
           </li><!-- End Dashboard Nav -->
           <?php if (true) { ?>
@@ -35,18 +35,13 @@
               </a>
               <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="/escolar/cursos">
-                          <i class="bi bi-circle"></i><span>Cursos</span>
-                      </a>
-                  </li>
-                  <li>
                       <a href="/escolar/disciplinas">
                           <i class="bi bi-circle"></i><span>Disciplinas</span>
                       </a>
                   </li>
                   <li>
-                      <a href="/escolar/estudantes">
-                          <i class="bi bi-circle"></i><span>Estudantes</span>
+                      <a href="/escolar/alunos">
+                          <i class="bi bi-circle"></i><span>Alunos</span>
                       </a>
                   </li>
                   <li>
@@ -59,12 +54,27 @@
 
           <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-layout-text-window-reverse"></i><span>RH</span><i class="bi bi-chevron-down ms-auto"></i>
+                  <i class="bi bi-layout-text-window-reverse"></i><span>Gestão</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
               <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="/rh/funcionarios">
                           <i class="bi bi-circle"></i><span>Funcionários</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/rh/funcionarios">
+                          <i class="bi bi-circle"></i><span>Salas</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/escolar/cursos">
+                          <i class="bi bi-circle"></i><span>Cursos</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/escolar/turmas">
+                          <i class="bi bi-circle"></i><span>Turmas</span>
                       </a>
                   </li>
               </ul>

@@ -118,6 +118,17 @@ class Cursos extends ResourceController
         return $this->respond([], 200);
     }
 
+    public function getDisciplina($id){
+        helper('funcao');
+        $user = getUserToken();
+
+        $data = [
+            'data' => $this->db->query("SELECT * FROM disciplinas WHERE curso = $id")->getResult(),
+        ];
+
+        return $this->respond($data, 200);
+    }
+
     public function adicionar()
     {
         return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/cursos') . view('componentes/footer');

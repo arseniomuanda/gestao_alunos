@@ -48,12 +48,42 @@ $routes->group('api', static function ($routes) {
         $routes->post('new', 'Cursos::add', ['filter' => 'authFilter']);
         $routes->post('update/(:num)', 'Cursos::actualizar/$1', ['filter' => 'authFilter']);
         $routes->post('remove/(:num)', 'Cursos::remove/$1', ['filter' => 'authFilter']);
+        $routes->get('disciplina/(:num)', 'Cursos::getDisciplina/$1', ['filter' => 'authFilter']);
     });
 
     $routes->group('disciplinas', static function ($routes) {
         $routes->post('new', 'Disciplinas::add', ['filter' => 'authFilter']);
         $routes->post('update/(:num)', 'Disciplinas::actualizar/$1', ['filter' => 'authFilter']);
         $routes->post('remove/(:num)', 'Disciplinas::remove/$1', ['filter' => 'authFilter']);
+    });
+
+    $routes->group('alunos', static function ($routes) {
+        $routes->post('new', 'Alunos::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Alunos::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('updateImagens/(:num)', 'Alunos::updateImagens/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Alunos::remove/$1', ['filter' => 'authFilter']);
+    });
+
+    $routes->group('turmas', static function ($routes) {
+        $routes->post('new', 'Turmas::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Turmas::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->get('curso/(:num)', 'Turmas::getTurmas/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Turmas::remove/$1', ['filter' => 'authFilter']);
+    });
+
+    $routes->group('provas', static function ($routes) {
+        $routes->post('new', 'Provas::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Provas::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Provas::remove/$1', ['filter' => 'authFilter']);
+        $routes->post('setnota', 'Provas::setNota', ['filter' => 'authFilter']);
+    });
+
+    $routes->group('vagas', static function ($routes) {
+        $routes->post('new', 'Vagas::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Vagas::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Vagas::remove/$1', ['filter' => 'authFilter']);
+        $routes->get('listar', 'Vagas::mostrar');
+        $routes->get('listar/(:num)', 'Vagas::mostrar/$1');
     });
 });
 
@@ -90,9 +120,9 @@ $routes->group('escolar', static function ($routes) {
     $routes->get('disciplinas/(:num)', 'Disciplinas::perfil/$1');
     $routes->get('disciplinas/novo', 'Disciplinas::adicionar');
 
-    $routes->get('estudantes/', 'Estudantes::index');
-    $routes->get('estudantes/(:num)', 'Estudantes::perfil/$1');
-    $routes->get('estudantes/novo', 'Estudantes::index');
+    $routes->get('alunos/', 'Alunos::index');
+    $routes->get('alunos/(:num)', 'Alunos::perfil/$1');
+    $routes->get('alunos/novo', 'Alunos::adicionar');
 
     $routes->get('provas/', 'Provas::index');
     $routes->get('provas/(:num)', 'Provas::perfil/$1');

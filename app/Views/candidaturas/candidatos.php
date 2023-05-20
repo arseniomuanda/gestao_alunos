@@ -4,7 +4,7 @@
           <h1>Lista de Candidatos</h1>
           <nav>
               <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
                   <li class="breadcrumb-item">Candidatos</li>
               </ol>
           </nav>
@@ -29,12 +29,13 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <?php for ($i = 0; $i < 6; $i++) { ?>
+                                  <?php $count = 0;
+                                    foreach ($candidatos as $key => $value) { ?>
                                       <tr>
-                                          <th scope="row">1</th>
-                                          <td>Brandon Jacob</td>
-                                          <td>15</td>
-                                          <td>2013-05-25</td>
+                                          <th scope="row"><?= $count ?></th>
+                                          <td><?= $count ?></td>
+                                          <td><?= $count ?></td>
+                                          <td><?= $count ?></td>
                                           <td></td>
                                       </tr>
                                   <?php  } ?>

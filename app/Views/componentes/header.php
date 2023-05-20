@@ -218,9 +218,9 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img v-bind:src="foto" alt="Profile" class="rounded-circle">
+                        <img v-bind:src="foto" alt="Perfil" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"> {{nome}}</span>
-                    </a><!-- End Profile Iamge Icon -->
+                    </a><!-- End Perfil Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
@@ -254,8 +254,8 @@
                             </a>
                         </li>
 
-                    </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
+                    </ul><!-- End Perfil Dropdown Items -->
+                </li><!-- End Perfil Nav -->
 
             </ul>
         </nav><!-- End Icons Navigation -->

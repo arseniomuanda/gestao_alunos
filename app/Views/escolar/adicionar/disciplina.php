@@ -21,18 +21,30 @@
                           <!-- Multi Columns Form -->
                           <form onsubmit="event.preventDefault();vue_app.addDisciplina()" class="row g-3">
                               <div class="col-md-12">
-                                  <label for="inputName5" class="form-label">Nome</label>
-                                  <input type="text" class="form-control" name="nome" id="nome">
+                                  <label for="nome" class="form-label">Nome</label>
+                                  <input required type="text" class="form-control" name="nome" id="nome">
                               </div>
                               <div class="col-md-6">
-                                  <label for="inputName5" class="form-label">Ano</label>
-                                  <select type="text" class="form-control" name="ano" id="ano">
-                                      <option value="">Selecionar Disciplina</option>
-                                      <?php foreach ($disciplinas as $key => $value) { ?>
+                                  <label for="curso" class="form-label">Curso</label>
+                                  <select required type="text" class="form-control" name="curso" id="curso">
+                                      <option value="">Selecionar Curso</option>
+                                      <?php foreach ($cursos as $key => $value) { ?>
                                           <option value="<?= $value->id ?>"><?= $value->nome ?></option>
                                       <?php } ?>
                                   </select>
                               </div>
+
+                              <div class="col-md-6">
+                                  <label for="ano" class="form-label">Ano</label>
+                                  <select required type="text" class="form-control" name="ano" id="ano">
+                                      <option value="">Selecionar ano</option>
+                                      <?php foreach ($anos as $key => $value) { ?>
+                                          <option value="<?= $value->id ?>"><?= $value->nome ?></option>
+                                      <?php } ?>
+                                  </select>
+                              </div>
+
+
                               <div class="text-center">
                                   <button type="submit" class="btn btn-primary">Salvar</button>
                                   <button type="reset" class="btn btn-secondary">Reset</button>

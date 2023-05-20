@@ -19,14 +19,14 @@
                         <h5 class="card-title">Dados da campanha</h5>
 
                         <!-- Multi Columns Form -->
-                        <form class="row g-3">
+                        <form class="row g-3" method="post" onsubmit="event.preventDefault();vue_app.addVaga()">
                             <div class="col-md-6">
                                 <label for="inputName5" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nome da candidatura">
+                                <input type="text" class="form-control" id="nome" placeholder="Nome da candidatura">
                             </div>
                             <div class="col-6">
                                 <label for="inputAddress5" class="form-label">Limite de Vagas</label>
-                                <input type="number" class="form-control" id="limit" placeholder="Número de vagas">
+                                <input type="number" class="form-control" id="maximo_candidados" placeholder="Número de vagas">
                             </div>
                             <div class="col-md-6">
                                 <label for="inputEmail5" class="form-label">Inicio</label>

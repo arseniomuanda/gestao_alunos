@@ -18,13 +18,13 @@ in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
  6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
-CRITICAL - 2023-04-01 17:53:36 --> Invalid file: "escolar/perfil/estudantes.php"
+CRITICAL - 2023-04-01 17:53:36 --> Invalid file: "escolar/perfil/alunos.php"
 in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
- 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('escolar/perfil/estudantes.php')
- 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/estudantes', [], true)
- 3 APPPATH/Controllers/Estudantes.php(19): view('escolar/perfil/estudantes')
- 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Estudantes->perfil('1')
- 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Estudantes))
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('escolar/perfil/alunos.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/alunos', [], true)
+ 3 APPPATH/Controllers/Alunos.php(19): view('escolar/perfil/alunos')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->perfil('1')
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
  6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

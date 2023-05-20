@@ -38642,7 +38642,7 @@ function createSVGVNode(width, height, children, useViewBox) {
         'xmlns': SVGNS,
         'xmlns:xlink': XLINKNS,
         'version': '1.1',
-        'baseProfile': 'full',
+        'basePerfil': 'full',
         'viewBox': useViewBox ? "0 0 " + width + " " + height : false
     }, children);
 }

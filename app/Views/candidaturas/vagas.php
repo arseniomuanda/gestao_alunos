@@ -29,25 +29,33 @@
                   <div class="card">
                       <div class="card-body">
                           <h5 class="card-title">Vagas de <?= date('Y') ?></h5>
-                          <p>Vagas alisivas ao ano de <?= date('Y') ?> <a href="" target="_blank">Ver formulário</a></p>
+                          <p>Vagas alusívas ao ano de <?= date('Y') ?> <a href="" target="_blank">Ver formulário</a></p>
 
                           <!-- Table with stripped rows -->
                           <table class="table datatable">
                               <thead>
                                   <tr>
                                       <th scope="col">#</th>
-                                      <th scope="col">Tema</th>
+                                      <th scope="col">Nome</th>
+                                      <th scope="col">Início</th>
+                                      <th scope="col">Fim</th>
+                                      <th scope="col">Estado</th>
                                       <th scope="col">Nº Candidados</th>
-                                      <th scope="col">Limite de Aprovaçoes</th>
+                                      <th scope="col" colspan="2">Opções</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <?php for ($i = 0; $i < 6; $i++) {  ?>
+                                  <?php $count = 0;
+                                    foreach ($vagas as $key => $value) { ?>
                                       <tr>
-                                          <th scope="row">1</th>
-                                          <td>Vaga Para curso de Informárica</td>
-                                          <td><?= rand(4,56) ?></td>
-                                          <td><?= rand(56,99) ?></td>
+                                          <th scope="row"><?= ++$count ?></th>
+                                          <td><?= $value->nome ?></td>
+                                          <td><?= $value->inicio ?></td>
+                                          <td><?= $value->fim ?></td>
+                                          <td><?= $value->estado == 1 ? 'Aberto' : 'Fechado' ?></td>
+                                          <td><?= $value->maximo_candidados ?></td>
+                                          <td><button onclick="vue_app.removeVaga(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                          <td><a href="/candidaturas/vagas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php } ?>
                               </tbody>

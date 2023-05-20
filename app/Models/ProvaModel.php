@@ -14,7 +14,7 @@ class ProvaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nome', 'ano', 'disciplina', 'trimestre', 'curso'];
+    protected $allowedFields    = ['nome', 'ano', 'disciplina', 'trimestre'];
 
     // Dates
     protected $useTimestamps = false;

@@ -45,7 +45,7 @@ class Disciplinas extends ResourceController
     public function index()
     {
         $data = [
-            'disciplinas' => $this->db->query("SELECT disciplinas.id, disciplinas.nome, anos.nome AS ano, cursos.nome AS curso, cursos.sigla FROM `disciplinas` INNER JOIN anos ON disciplinas.ano = anos.id INNER JOIN cursos ON anos.curso = cursos.id")->getResult(),
+            'disciplinas' => $this->db->query("SELECT disciplinas.id, disciplinas.nome, anos.nome AS ano, cursos.nome AS curso, cursos.sigla FROM `disciplinas` INNER JOIN anos ON disciplinas.ano = anos.id INNER JOIN cursos ON disciplinas.curso = cursos.id")->getResult(),
         ];
         return view('componentes/header') . view('componentes/sider') . view('escolar/lista/disciplinas', $data) . view('componentes/footer');
     }
@@ -119,6 +119,7 @@ class Disciplinas extends ResourceController
     public function adicionar()
     {
         $data = [
+            'anos' => $this->db->query("SELECT * FROM anos")->getResult(),
             'cursos' => $this->db->query("SELECT * FROM cursos")->getResult()
         ];
         return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/disciplina', $data) . view('componentes/footer');
@@ -126,6 +127,15 @@ class Disciplinas extends ResourceController
 
     public function perfil($id)
     {
-        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/disciplina') . view('componentes/footer');
+        $data = [
+            'anos' => $this->db->query("SELECT * FROM anos")->getResult(),
+            'cursos' => $this->db->query("SELECT * FROM cursos")->getResult(),
+            'disciplina' => $this->db->query("SELECT disciplinas.*, cursos.nome AS curso_nome, anos.nome ano_nome FROM disciplinas INNER JOIN cursos ON disciplinas.curso = cursos.id INNER JOIN anos ON disciplinas.ano = anos.id WHERE disciplinas.id = $id")->getRow(0),
+            'primeiro' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 1")->getResult(),
+            'segundo' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 2")->getResult(),
+            'terceiro' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 3")->getResult(),
+        ];
+
+        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/disciplina', $data) . view('componentes/footer');
     }
 }

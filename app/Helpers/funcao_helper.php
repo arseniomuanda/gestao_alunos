@@ -102,16 +102,17 @@ function cadastrocomumafoto($model, $data, $db, $auditoria, $foto, $campo)
     ];
 }
 
-function cadastrocomduasfotos($model, $data, $db, $auditoria, $precesso, $tabela, $foto1, $campo1, $foto2, $campo2)
+function cadastrocomcincofotos($model, $data, $db, $auditoria, $precesso, $foto1, $campo1, $foto2, $campo2, $foto3, $campo3, $foto4, $campo4, $foto5, $campo5)
 {
     $query = $model->save($data);
 
     if ($query) {
         $id = $db->insertID();
+        $db->query("UPDATE $model->table SET numero = '000$id' WHERE `id` = $id");
 
         if (is_file($foto1)) {
             $nome1 = $campo1 . (int)$id . '.' . $foto1->getExtension();
-            if (store($foto1, $nome1, $tabela) !== true) {
+            if (store($foto1, $nome1, $model->table) !== true) {
                 $output = [
                     'message' => 'Não foi possivel salvar a foto1',
                     'error' => true,
@@ -119,13 +120,13 @@ function cadastrocomduasfotos($model, $data, $db, $auditoria, $precesso, $tabela
                 ];
                 return $output;
             }
-            $path = base_url() . "/file/$tabela/$nome1";
-            $db->query("UPDATE $tabela SET $campo1 = '$path' WHERE `id` = $id");
+            $path = base_url() . "/file/$model->table/$nome1";
+            $db->query("UPDATE $model->table SET $campo1 = '$path', numero = '000$id' WHERE `id` = $id");
         }
 
         if (is_file($foto2)) {
             $nome2 = $campo2 . (int)$id . '.' . $foto2->getExtension();
-            if (store($foto2, $nome2, $tabela) !== true) {
+            if (store($foto2, $nome2, $model->table) !== true) {
                 $output = [
                     'message' => 'Não foi possivel salvar a foto2',
                     'error' => true,
@@ -133,14 +134,149 @@ function cadastrocomduasfotos($model, $data, $db, $auditoria, $precesso, $tabela
                 ];
                 return $output;
             }
-            $path = base_url() . "/file/$tabela/$nome2";
-            $db->query("UPDATE $tabela SET $campo2 = '$path' WHERE `id` = $id");
+            $path = base_url() . "/file/$model->table/$nome2";
+            $db->query("UPDATE $model->table SET $campo2 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto3)) {
+            $nome3 = $campo3 . (int)$id . '.' . $foto3->getExtension();
+            if (store($foto3, $nome3, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto3',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome3";
+            $db->query("UPDATE $model->table SET $campo3 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto4)) {
+            $nome4 = $campo4 . (int)$id . '.' . $foto4->getExtension();
+            if (store($foto4, $nome4, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto4',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome4";
+            $db->query("UPDATE $model->table SET $campo4 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto5)) {
+            $nome5 = $campo2 . (int)$id . '.' . $foto5->getExtension();
+            if (store($foto5, $nome5, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto5',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome5";
+            $db->query("UPDATE $model->table SET $campo5 = '$path' WHERE `id` = $id");
         }
         $auditoria->save([
             'accao' => 'Inserir',
             'processo' => $precesso,
             'registo' => $id,
             'utilizador' => $data['criadopor'],
+            'dataAcao' => date('Y-m-d H:i:s'),
+            'dataExpiracao' => date('Y-m-d H:i:s', strtotime('+2 years', strtotime(date('Y-m-d H:i:s')))),
+        ]);
+        return [
+            'message' => 'Sucesso!',
+            'error' => false,
+            'code' => 200,
+            'data' => $model->where('id', $id)->paginate()
+        ];
+    } else if ($model->errors()) {
+        $message = $model->errors();
+    } else {
+        $message = 'Sem sucesso';
+    }
+
+    return [
+        'message' => $message,
+        'error' => false,
+        'code' => 400,
+    ];
+}
+
+function updatecomcincofotos($model, $id, $criadopor, $db, $auditoria, $precesso, $foto1, $campo1, $foto2, $campo2, $foto3, $campo3, $foto4, $campo4, $foto5, $campo5)
+{
+    if (true) {
+        if (is_file($foto1)) {
+            $nome1 = $campo1 . (int)$id . '.' . $foto1->getExtension();
+            if (store($foto1, $nome1, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto1',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome1";
+            $db->query("UPDATE $model->table SET $campo1 = '$path', numero = '000$id' WHERE `id` = $id");
+        }
+
+        if (is_file($foto2)) {
+            $nome2 = $campo2 . (int)$id . '.' . $foto2->getExtension();
+            if (store($foto2, $nome2, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto2',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome2";
+            $db->query("UPDATE $model->table SET $campo2 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto3)) {
+            $nome3 = $campo3 . (int)$id . '.' . $foto3->getExtension();
+            if (store($foto3, $nome3, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto3',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome3";
+            $db->query("UPDATE $model->table SET $campo3 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto4)) {
+            $nome4 = $campo4 . (int)$id . '.' . $foto4->getExtension();
+            if (store($foto4, $nome4, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto4',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome4";
+            $db->query("UPDATE $model->table SET $campo4 = '$path' WHERE `id` = $id");
+        }
+        if (is_file($foto5)) {
+            $nome5 = $campo5 . (int)$id . '.' . $foto5->getExtension();
+            if (store($foto5, $nome5, $model->table) !== true) {
+                $output = [
+                    'message' => 'Não foi possivel salvar a foto5',
+                    'error' => true,
+                    'type' => $model->erros()
+                ];
+                return $output;
+            }
+            $path = base_url() . "/file/$model->table/$nome5";
+            $db->query("UPDATE $model->table SET $campo5 = '$path' WHERE `id` = $id");
+        }
+        $auditoria->save([
+            'accao' => 'Inserir',
+            'processo' => $precesso,
+            'registo' => $id,
+            'utilizador' => $criadopor,
             'dataAcao' => date('Y-m-d H:i:s'),
             'dataExpiracao' => date('Y-m-d H:i:s', strtotime('+2 years', strtotime(date('Y-m-d H:i:s')))),
         ]);
@@ -301,7 +437,7 @@ function updatenomal($model, $data, $auditoria)
 function updatecomumafoto($model, $data, $db, $auditoria, $precesso, $foto, $campo)
 {
     $query = $model->save($data);
-     $tabela = $model->table;
+    $tabela = $model->table;
 
     if ($query) {
         $id = $data['id'];
@@ -450,7 +586,7 @@ function emailchange($data, $pessaoModel, $db, $auditoria)
 
 function password_reset($data, $db, $auditoria)
 {
-    $pass = isset($data['password']) ? $data['password'] : '1234'; 
+    $pass = isset($data['password']) ? $data['password'] : '1234';
     $hashedpass = password_hash($pass, PASSWORD_BCRYPT);
     $id = $data['id'];
 

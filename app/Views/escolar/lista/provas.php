@@ -28,33 +28,34 @@
 
                   <div class="card">
                       <div class="card-body">
-                          
+
                           <!-- Table with stripped rows -->
                           <table class="table datatable">
                               <thead>
                                   <tr>
                                       <th scope="col">#</th>
                                       <th scope="col">Nome</th>
-                                      <th scope="col">Curso</th>
+                                      <th scope="col">Ano</th>
                                       <th scope="col">Disciplina</th>
                                       <th scope="col">Trimeste</th>
+                                      <th scope="col" colspan="2">Opções</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <th scope="row">1</th>
-                                      <td>Brandon Jacob</td>
-                                      <td>Brandon Jacob</td>
-                                      <td>Designer</td>
-                                      <td>28</td>
-                                  </tr>
-                                  <tr>
-                                      <th scope="row">1</th>
-                                      <td>Brandon Jacob</td>
-                                      <td>Brandon Jacob</td>
-                                      <td>Designer</td>
-                                      <td>28</td>
-                                  </tr>
+                                  <?php $i = 0;
+                                    foreach ($provas as $key => $value) { ?>
+                                      <tr>
+                                          <th scope="row"><?= ++$i ?></th>
+                                          <td><?= $value->nome ?></td>
+                                          <td><?= $value->ano ?></td>
+                                          <td><?= $value->disciplina ?></td>
+                                          <td><?= $value->trimestre ?></td>
+                                          <td>
+                                              <button onclick="vue_app.removeProva(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button>
+                                              <a href="/escolar/provas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                                          </td>
+                                      </tr>
+                                  <?php } ?>
                               </tbody>
                           </table>
                           <!-- End Table with stripped rows -->
