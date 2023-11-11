@@ -67,13 +67,19 @@ class Login extends ResourceController
 
     private function validar_categoria(int $id)
     {
+        $cat = $this->db->query("SELECT * FROM utilizadores WHERE id = '$id'")->getRow(0);
+
+        if ($cat->id == 1) {
+            return 1;
+        }
         $query = $this->db->query("SELECT COUNT(*) AS total FROM funcionarios WHERE utilizador = '$id'")->getRow(0)->total;
         if ($query > 0) {
-            return 1;
+            $cat = $this->db->query("SELECT * FROM funcionarios WHERE utilizador = '$id'")->getRow(0);
+            return $id == 1 ? $cat->id : $cat->categoria;
         } else {
             $query = $this->db->query("SELECT COUNT(*) AS total FROM alunos WHERE utilizador = '$id'")->getRow(0)->total;
             if ($query > 0) {
-                return 2;
+                return 4;
             } else {
                 return 0;
             }
@@ -104,6 +110,10 @@ class Login extends ResourceController
                     'dataExpiracao' => date("Y-m-d H:i:s'", strtotime("+2 years", strtotime(date("Y-m-d H:i:s")))),
                 ]);
 
+                if($acesso == 4){
+                    $idAluno = $this->db->query("SELECT * FROM `alunos` WHERE `utilizador` = $user->id")->getRow()->id;
+                }
+
                 $key = getenv('JWT_SECRET');
                 $issuer_claim = 'THE_CLAIN';
                 $audience_claim = 'THE_AUDIENCE';
@@ -121,6 +131,7 @@ class Login extends ResourceController
                         'acesso'    => $acesso, // Este acesso vai ser actualizado para vir da base de dados
                         'email'     => $email,
                         'id'        => $user->id,
+                        'aluno'        => $acesso == 4 ? $idAluno :null,
                     ]
                 ];
 
@@ -147,6 +158,8 @@ class Login extends ResourceController
                     'id'        => $user->id,
                     'nome'        => $user->nome,
                     'foto'        => $user->foto,
+                    'acesso'    => $acesso,
+                    'aluno'        => $acesso == 4 ? $idAluno : null,
                     'logado'        => true
                 ];
 
@@ -184,6 +197,6 @@ class Login extends ResourceController
         $this->session->destroy();
         $this->db->query("UPDATE " . $this->model->table . " SET `api_token`= '' WHERE id = $user->id");
 
-        return $this->respond([],200);
+        return $this->respond([], 200);
     }
 }

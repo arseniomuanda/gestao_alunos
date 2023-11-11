@@ -148,8 +148,15 @@
             sessionStorage.setItem('username', response.username);
             sessionStorage.setItem('logado', response.logado);
             sessionStorage.setItem('id', response.id);
+            sessionStorage.setItem('acesso', response.acesso);
+            sessionStorage.setItem('aluno', response.aluno);
 
             location.reload();
+          } else {
+            alert("Login incorreto");
+            console.log('resposta', response);
+            // Algo deu errado a reposta nao content nenhuma informacao caso isso acontenca
+            // Da uma olhada oque o servidor esta a responder no console log
           }
         })
         .catch(err => console.error(err));

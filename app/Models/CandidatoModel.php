@@ -14,7 +14,7 @@ class CandidatoModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'nome', 'email', 'telefone', 'datanascimento', 'atestado_medico', 'foto_tipo_pass', 'copia_bi', 'declaracao_notas', 'certificado'];
+    protected $allowedFields    = ['nome', 'email', 'bi', 'opcao1', 'opcao2', 'telefone', 'campanha', 'datanascimento', 'atestado_medico', 'foto_tipo_pass', 'copia_bi', 'declaracao_notas', 'certificado', 'estado'];
 
     // Dates
     protected $useTimestamps = false;

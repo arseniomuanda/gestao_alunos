@@ -125,7 +125,7 @@ class Internet extends Base
         }
 
         // clean possible trailing dots from first/last names
-        $username = str_replace('..', '.', $username);
+        $username = str_replace('..', '.'name);
         $username = rtrim($username, '.');
 
         return $username;

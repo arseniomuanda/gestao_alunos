@@ -1,0 +1,56 @@
+ERROR - 2023-06-26 07:31:42 --> mysqli_sql_exception: Duplicate entry '09803808ja8934' for key 'bi' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `ut...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ut...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ut...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ut...', Array, false)
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save(Array)
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Alunos.php(161): cadastronormal(Object(App\Models\UtilizadoreModel), Array, Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+#10 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Alunos->matricular('1')
+#11 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+#12 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#15 {main}
+CRITICAL - 2023-06-26 07:31:42 --> Duplicate entry '09803808ja8934' for key 'bi'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `utilizadores` (`password`, `email`, `telefone`, `bi`, `nome`) VALUES (:password:, :email:, :telefone:, :bi:, :nome:)', [...], false)
+ 2 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH/Helpers/funcao_helper.php(26): CodeIgniter\BaseModel->save([...])
+ 7 APPPATH/Controllers/Alunos.php(161): cadastronormal(Object(App\Models\UtilizadoreModel), [...], Object(CodeIgniter\Database\MySQLi\Connection), Object(App\Models\Auditoria))
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Alunos->matricular('1')
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Alunos))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-26 07:41:48 --> Attempt to read property "opcao_id1" on null
+in APPPATH/Controllers/Candidaturas.php on line 183.
+ 1 APPPATH/Controllers/Candidaturas.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "opcao_id1" on null', 'APPPATH/Controllers/Candidaturas.php', 183)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-26 07:42:06 --> Attempt to read property "opcao_id1" on null
+in APPPATH/Controllers/Candidaturas.php on line 183.
+ 1 APPPATH/Controllers/Candidaturas.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "opcao_id1" on null', 'APPPATH/Controllers/Candidaturas.php', 183)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-26 07:42:12 --> Attempt to read property "opcao_id1" on null
+in APPPATH/Controllers/Candidaturas.php on line 183.
+ 1 APPPATH/Controllers/Candidaturas.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "opcao_id1" on null', 'APPPATH/Controllers/Candidaturas.php', 183)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

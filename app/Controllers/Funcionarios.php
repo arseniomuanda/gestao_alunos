@@ -169,9 +169,9 @@ class Funcionarios extends ResourceController
         if ($user->id != 1) {
             return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
         }
-        $func = $this->db->query("SELECT * FROM " . $this->funcionarioModel->table . " WHERE id = $id")->getRow(0);
+        $userD = $this->db->query("SELECT * FROM " . $this->utilizadorModel->table . " WHERE id = $id")->getRow(0);
         $userData = [
-            'id' => $func->utilizador,
+            'id' => $userD->id,
             'criadopor' => $user->id
         ];
 
@@ -188,15 +188,15 @@ class Funcionarios extends ResourceController
         helper('funcao');
         $user = getUserToken();
 
-        if ($user->id != 1 || $user == $id) {
+        if ($user->id != 1 && $user->id != $id) {
             return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
         }
-        $func = $this->db->query("SELECT * FROM " . $this->funcionarioModel->table . " WHERE id = $id")->getRow(0);
+        //$func = $this->db->query("SELECT * FROM " . $this->funcionarioModel->table . " WHERE utilizador = $id")->getRow(0);
 
         $oldPass = $this->request->getPost('oldpass');
         $newPass = $this->request->getPost('newpass');
 
-        $userD = $this->db->query("SELECT * FROM " . $this->utilizadorModel->table . " WHERE id = $func->utilizador")->getRow(0);
+        $userD = $this->db->query("SELECT * FROM " . $this->utilizadorModel->table . " WHERE id = $id")->getRow(0);
 
         if (password_verify($oldPass, $userD->password)) {
             $userData = [
@@ -243,7 +243,7 @@ class Funcionarios extends ResourceController
     public function perfil($id)
     {
         $data = [
-            'funcionario' => $this->db->query("SELECT funcionarios.*, categorias.nome AS categoria, utilizadores.nome, utilizadores.email, utilizadores.bi, utilizadores.sexo, utilizadores.telefone, utilizadores.bairro, utilizadores.municipio, utilizadores.rua, utilizadores.n_casa, utilizadores.foto FROM `funcionarios` INNER JOIN `utilizadores` ON funcionarios.utilizador = utilizadores.id INNER JOIN categorias ON funcionarios.categoria = categorias.id WHERE funcionarios.id = $id")->getRow(0)
+            'funcionario' => $this->db->query("SELECT funcionarios.*, categorias.nome AS cat_id, categorias.id AS categoria, utilizadores.nome, utilizadores.email, utilizadores.bi, utilizadores.sexo, utilizadores.telefone, utilizadores.bairro, utilizadores.municipio, utilizadores.rua, utilizadores.n_casa, utilizadores.foto FROM `funcionarios` INNER JOIN `utilizadores` ON funcionarios.utilizador = utilizadores.id INNER JOIN categorias ON funcionarios.categoria = categorias.id WHERE funcionarios.id = $id")->getRow(0)
         ];
         return view('componentes/header') . view('componentes/sider') . view('rh/perfil', $data) . view('componentes/footer');
     }

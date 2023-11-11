@@ -3,7 +3,7 @@ function cleanarray($data)
 {
     $newdata = null;
     foreach ($data as $key => $val) {
-        if ($val !== null) {
+        if ($val != null) {
             $newdata[$key] = $val;
         }
     }
@@ -108,8 +108,10 @@ function cadastrocomcincofotos($model, $data, $db, $auditoria, $precesso, $foto1
 
     if ($query) {
         $id = $db->insertID();
-        $db->query("UPDATE $model->table SET numero = '000$id' WHERE `id` = $id");
-
+        if ($model->table == 'alunos') {
+            $db->query("UPDATE $model->table SET numero = '000$id' WHERE `id` = $id");
+        }
+        
         if (is_file($foto1)) {
             $nome1 = $campo1 . (int)$id . '.' . $foto1->getExtension();
             if (store($foto1, $nome1, $model->table) !== true) {
@@ -121,7 +123,9 @@ function cadastrocomcincofotos($model, $data, $db, $auditoria, $precesso, $foto1
                 return $output;
             }
             $path = base_url() . "/file/$model->table/$nome1";
-            $db->query("UPDATE $model->table SET $campo1 = '$path', numero = '000$id' WHERE `id` = $id");
+            if ($model->table == 'alunos') {
+                $db->query("UPDATE $model->table SET $campo1 = '$path' WHERE `id` = $id");
+            }   
         }
 
         if (is_file($foto2)) {
@@ -203,7 +207,7 @@ function cadastrocomcincofotos($model, $data, $db, $auditoria, $precesso, $foto1
     ];
 }
 
-function updatecomcincofotos($model, $id, $criadopor, $db, $auditoria, $precesso, $foto1, $campo1, $foto2, $campo2, $foto3, $campo3, $foto4, $campo4, $foto5, $campo5)
+function updatecomcincofotos($model, $id, $criadopor, $db, $auditoria, $precesso, $foto1, $campo1, $foto2, $campo2, $foto3, $campo3, $foto4, $campo4, $foto5, $campo5, $isAluno = true)
 {
     if (true) {
         if (is_file($foto1)) {
@@ -217,7 +221,10 @@ function updatecomcincofotos($model, $id, $criadopor, $db, $auditoria, $precesso
                 return $output;
             }
             $path = base_url() . "/file/$model->table/$nome1";
-            $db->query("UPDATE $model->table SET $campo1 = '$path', numero = '000$id' WHERE `id` = $id");
+            $db->query("UPDATE $model->table SET $campo1 = '$path' WHERE `id` = $id");
+            if($isAluno){
+                $db->query("UPDATE $model->table SET $campo1 = '$path', numero = '000$id' WHERE `id` = $id");
+            }
         }
 
         if (is_file($foto2)) {

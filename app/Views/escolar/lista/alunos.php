@@ -17,7 +17,7 @@
 
           <div class="col-lg-3">
 
-              <a class="btn btn-block btn-success" href="/escolar/alunos/novo">Cadastrar Aluno</a>
+              <a v-if="acesso == 1 || acesso == 3" class="btn btn-block btn-success" href="/escolar/alunos/novo">Cadastrar Aluno</a>
 
           </div>
       </div>
@@ -38,7 +38,7 @@
                                       <th scope="col">Sexo</th>
                                       <th scope="col">Curso</th>
                                       <th scope="col">Turma</th>
-                                      <th scope="col" colspan="2">Opção</th>
+                                      <th scope="col">Opção</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -47,11 +47,10 @@
                                       <tr>
                                           <th scope="row"><?= ++$index ?></th>
                                           <td><?= $value->nome ?></td>
-                                          <td><?=  (int) date('Y') - (int) date('Y', strtotime($value->datanascimento)) ?></td>
+                                          <td><?= (int) date('Y') - (int) date('Y', strtotime($value->datanascimento)) ?></td>
                                           <td><?= $value->sexo == 'M' ? 'Masculino' : 'Feminino' ?></td>
                                           <td><?= $value->curso ?></td>
                                           <td><?= $value->turma ?></td>
-                                          <td><button onclick="vue_app.removeDisciplica(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
                                           <td><a href="/escolar/alunos/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php } ?>

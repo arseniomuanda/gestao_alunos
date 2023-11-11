@@ -56,7 +56,7 @@ class Alunos extends ResourceController
     public function adicionar()
     {
         $data = [
-            'candidatos'=>[],
+            'candidatos' => [],
             'cursos' => $this->db->query("SELECT * FROM cursos")->getResult()
         ];
         return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/alunos', $data) . view('componentes/footer');
@@ -141,6 +141,58 @@ class Alunos extends ResourceController
         return $this->respond($resposta, 200);
     }
 
+    public function matricular($id)
+    {
+        helper('funcao');
+        $user = getUserToken();
+        $row = $this->db->query("SELECT * FROM `candidatos` WHERE id = $id")->getRow();
+
+        $userData = [
+            'password' => password_hash($row->bi, PASSWORD_BCRYPT),
+            'email' => $row->email,
+            'telefone' => $row->telefone,
+            'bi' => $row->bi,
+            'nome' => $row->nome,
+            'criadopor' => $user->id
+        ];
+
+        cleanarray($userData);
+
+        $userResult = cadastronormal($this->utilizadorModel, $userData, $this->db, $this->auditoriaModel);
+        if ($userResult['code'] !== 200) {
+            $data['product'] = $userResult;
+            return $this->respond(returnVoid($userData, (int) 400), 400);
+        }
+
+        $data = [
+            'nome' => $row->nome,
+            'bi' => $row->bi,
+            'telefone' => $row->telefone,
+            'email' => $row->email,
+            'utilizador' => $userResult['id'],
+            'criadopor' => $user->id,
+            'nome_pai' => $this->request->getPost('nome_pai'),
+            'nome_mae' => $this->request->getPost('nome_mae'),
+            'nome_encarregado' => $this->request->getPost('nome_encarregado'),
+            'telefone_encarregado' => $this->request->getPost('telefone_encarregado'),
+            'curso' => $this->request->getPost('curso'),
+            'turma' => $this->request->getPost('turma'),
+            'dataentrada' => $this->request->getPost('dataentrada'),
+        ];
+
+        $data = cleanarray($data);
+
+        $resposta = cadastronormal($this->alunoModel, $data, $this->db, $this->auditoriaModel);
+
+        if ($resposta['code'] !== 200) {
+            return $this->respond(returnVoid($resposta, (int) 400), 400);
+        }
+
+        $this->db->query("UPDATE `candidatos` SET estado = 3 WHERE id = $id");
+        return $this->respond($resposta, 200);
+    }
+
+
     public function updateImagens($id)
     {
         helper('funcao');
@@ -193,7 +245,7 @@ class Alunos extends ResourceController
         }
 
         $data = [
-            'id'=> $id,
+            'id' => $id,
             'nome' => $this->request->getPost('nome'),
             'bi' => $this->request->getPost('bi'),
             'telefone' => $this->request->getPost('telefone'),

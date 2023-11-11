@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Tempo de geração: 13-Maio-2023 às 18:34
+-- Tempo de geração: 21-Jun-2023 às 13:46
 -- Versão do servidor: 5.7.39
 -- versão do PHP: 7.4.33
 
@@ -50,14 +50,6 @@ CREATE TABLE `alunos` (
   `utilizador` int(11) NOT NULL,
   `estado` varchar(30) NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `alunos`
---
-
-INSERT INTO `alunos` (`id`, `numero`, `dataentrada`, `datanascimento`, `nome_pai`, `nome_mae`, `nome_encarregado`, `telefone_encarregado`, `atestado_medico`, `foto_tipo_pass`, `copia_bi`, `declaracao_notas`, `certificado`, `created_at`, `updated_at`, `deleted_at`, `curso`, `ano`, `turma`, `utilizador`, `estado`) VALUES
-(4, '0004', '2023-05-07', '2008-12-31', 'Arsénio', 'Paula', 'Muanda', '+244990302023', 'http://localhost:8080//file/alunos/atestado_medico4.png', 'http://localhost:8080//file/alunos/foto_tipo_pass4.png', NULL, NULL, 'http://localhost:8080//file/alunos/certificado4.png', NULL, NULL, NULL, 7, 1, 1, 18, 'Activo'),
-(5, '0005', '2023-05-07', '2008-12-31', 'Arsénio', 'DT', 'Muanda', '+244990302023', 'http://localhost:8080//file/alunos/atestado_medico5.png', 'http://localhost:8080//file/alunos/foto_tipo_pass5.png', NULL, NULL, NULL, NULL, NULL, NULL, 7, 1, 1, 19, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -2670,7 +2662,125 @@ INSERT INTO `auditoria` (`idauditoria`, `accao`, `processo`, `registo`, `utiliza
 (2792, 'Inserir', 'New notas', '6', '1', '2023-05-13 18:17:07', '2025-05-13 18:17:07', '2023-05-13 19:17:07', NULL, NULL, NULL),
 (2793, 'Inserir', 'New provas', '6', '1', '2023-05-13 18:19:44', '2025-05-13 18:19:44', '2023-05-13 19:19:44', NULL, NULL, NULL),
 (2794, 'Inserir', 'New notas', '7', '1', '2023-05-13 18:19:57', '2025-05-13 18:19:57', '2023-05-13 19:19:57', NULL, NULL, NULL),
-(2795, 'Inserir', 'New notas', '8', '1', '2023-05-13 18:20:01', '2025-05-13 18:20:01', '2023-05-13 19:20:01', NULL, NULL, NULL);
+(2795, 'Inserir', 'New notas', '8', '1', '2023-05-13 18:20:01', '2025-05-13 18:20:01', '2023-05-13 19:20:01', NULL, NULL, NULL),
+(2796, 'Actualizar', 'Update notas', '4', '1', '2023-05-15 00:00:00', '2025-05-15 13:11:37', '2023-05-15 14:11:37', NULL, NULL, NULL),
+(2797, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-15 13:13:20', '2025-05-15 13:13:20', '2023-05-15 14:13:20', NULL, NULL, NULL),
+(2798, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-15 13:16:30', '2025-05-15 13:16:30', '2023-05-15 14:16:30', NULL, NULL, NULL),
+(2799, 'Inserir', 'New campanhas', '1', '1', '2023-05-15 19:43:45', '2025-05-15 19:43:45', '2023-05-15 20:43:45', NULL, NULL, NULL),
+(2800, 'Actualizar', 'Update campanhas', '1', '1', '2023-05-15 00:00:00', '2025-05-15 20:48:06', '2023-05-15 21:48:06', NULL, NULL, NULL),
+(2801, 'Actualizar', 'Update campanhas', '1', '1', '2023-05-15 00:00:00', '2025-05-15 20:50:28', '2023-05-15 21:50:28', NULL, NULL, NULL),
+(2802, 'Actualizar', 'Update campanhas', '1', '1', '2023-05-15 00:00:00', '2025-05-15 20:50:35', '2023-05-15 21:50:35', NULL, NULL, NULL),
+(2803, 'Actualizar', 'Update campanhas', '1', '1', '2023-05-15 00:00:00', '2025-05-15 20:52:33', '2023-05-15 21:52:33', NULL, NULL, NULL),
+(2804, 'Deletar', 'Deletar campanhas', '1', '1', '2023-05-15 00:00:00', '2025-05-15 20:59:41', '2023-05-15 21:59:41', NULL, NULL, NULL),
+(2805, 'Inserir', 'New campanhas', '2', '1', '2023-05-15 21:00:27', '2025-05-15 21:00:27', '2023-05-15 22:00:27', NULL, NULL, NULL),
+(2806, 'Inserir', 'New campanhas', '3', '1', '2023-05-20 15:37:10', '2025-05-20 15:37:10', '2023-05-20 16:37:10', NULL, NULL, NULL),
+(2807, 'Inserir', 'Candidato', '6', '1', '2023-05-20 18:08:30', '2025-05-20 18:08:30', '2023-05-20 19:08:30', NULL, NULL, NULL),
+(2808, 'Inserir', 'Candidato', '7', '1', '2023-05-20 18:09:35', '2025-05-20 18:09:35', '2023-05-20 19:09:35', NULL, NULL, NULL),
+(2809, 'Inserir', 'Candidato', '8', '1', '2023-05-20 18:13:22', '2025-05-20 18:13:22', '2023-05-20 19:13:22', NULL, NULL, NULL),
+(2810, 'Inserir', 'Candidato', '9', '1', '2023-05-20 18:48:27', '2025-05-20 18:48:27', '2023-05-20 19:48:27', NULL, NULL, NULL),
+(2811, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:24:09', '2025-05-28 15:24:09', '2023-05-28 16:24:09', NULL, NULL, NULL),
+(2812, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:25:09', '2025-05-28 15:25:09', '2023-05-28 16:25:09', NULL, NULL, NULL),
+(2813, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:27:09', '2025-05-28 15:27:09', '2023-05-28 16:27:09', NULL, NULL, NULL),
+(2814, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:30:42', '2025-05-28 15:30:42', '2023-05-28 16:30:42', NULL, NULL, NULL),
+(2815, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:40:22', '2025-05-28 15:40:22', '2023-05-28 16:40:22', NULL, NULL, NULL),
+(2816, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:41:38', '2025-05-28 15:41:38', '2023-05-28 16:41:38', NULL, NULL, NULL),
+(2817, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:44:56', '2025-05-28 15:44:56', '2023-05-28 16:44:56', NULL, NULL, NULL),
+(2818, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-28 15:49:50', '2025-05-28 15:49:50', '2023-05-28 16:49:50', NULL, NULL, NULL),
+(2819, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-28 15:50:12', '2025-05-28 15:50:12', '2023-05-28 16:50:12', NULL, NULL, NULL),
+(2820, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-28 15:50:32', '2025-05-28 15:50:32', '2023-05-28 16:50:32', NULL, NULL, NULL);
+INSERT INTO `auditoria` (`idauditoria`, `accao`, `processo`, `registo`, `utilizador`, `dataAcao`, `dataExpiracao`, `created_at`, `updated_at`, `criadopor`, `deleted_at`) VALUES
+(2821, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-28 15:50:54', '2025-05-28 15:50:54', '2023-05-28 16:50:54', NULL, NULL, NULL),
+(2822, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:53:27', '2025-05-28 15:53:27', '2023-05-28 16:53:27', NULL, NULL, NULL),
+(2823, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:53:36', '2025-05-28 15:53:36', '2023-05-28 16:53:36', NULL, NULL, NULL),
+(2824, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:55:22', '2025-05-28 15:55:22', '2023-05-28 16:55:22', NULL, NULL, NULL),
+(2825, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:55:35', '2025-05-28 15:55:35', '2023-05-28 16:55:35', NULL, NULL, NULL),
+(2826, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:55:49', '2025-05-28 15:55:49', '2023-05-28 16:55:49', NULL, NULL, NULL),
+(2827, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:58:40', '2025-05-28 15:58:40', '2023-05-28 16:58:40', NULL, NULL, NULL),
+(2828, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:58:45', '2025-05-28 15:58:45', '2023-05-28 16:58:45', NULL, NULL, NULL),
+(2829, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:59:21', '2025-05-28 15:59:21', '2023-05-28 16:59:21', NULL, NULL, NULL),
+(2830, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 15:59:37', '2025-05-28 15:59:37', '2023-05-28 16:59:37', NULL, NULL, NULL),
+(2831, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 16:00:30', '2025-05-28 16:00:30', '2023-05-28 17:00:30', NULL, NULL, NULL),
+(2832, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 16:12:00', '2025-05-28 16:12:00', '2023-05-28 17:12:00', NULL, NULL, NULL),
+(2833, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 16:12:18', '2025-05-28 16:12:18', '2023-05-28 17:12:18', NULL, NULL, NULL),
+(2834, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 16:12:51', '2025-05-28 16:12:51', '2023-05-28 17:12:51', NULL, NULL, NULL),
+(2835, 'Inserir', 'Atualizar Ducumentos do Aluno', '4', '1', '2023-05-28 16:19:21', '2025-05-28 16:19:21', '2023-05-28 17:19:21', NULL, NULL, NULL),
+(2836, 'Inserir', 'Atualizar Ducumentos do Candidato', '9', '1', '2023-05-28 16:20:42', '2025-05-28 16:20:42', '2023-05-28 17:20:42', NULL, NULL, NULL),
+(2837, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:19:11', '2023-05-28 18:19:11', NULL, NULL, NULL),
+(2838, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:26:24', '2023-05-28 18:26:24', NULL, NULL, NULL),
+(2839, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:27:01', '2023-05-28 18:27:01', NULL, NULL, NULL),
+(2840, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:27:06', '2023-05-28 18:27:06', NULL, NULL, NULL),
+(2841, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:44:15', '2023-05-28 18:44:15', NULL, NULL, NULL),
+(2842, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:44:27', '2023-05-28 18:44:27', NULL, NULL, NULL),
+(2843, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:44:34', '2023-05-28 18:44:34', NULL, NULL, NULL),
+(2844, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 17:44:41', '2023-05-28 18:44:41', NULL, NULL, NULL),
+(2845, 'Inserir', 'New utilizadores', '22', '1', '2023-05-28 18:18:11', '2025-05-28 18:18:11', '2023-05-28 19:18:11', NULL, NULL, NULL),
+(2846, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 18:50:46', '2023-05-28 19:50:46', NULL, NULL, NULL),
+(2847, 'Actualizar', 'Update candidatos', '9', '1', '2023-05-28 00:00:00', '2025-05-28 18:50:51', '2023-05-28 19:50:51', NULL, NULL, NULL),
+(2848, 'Inserir', 'New utilizadores', '26', '1', '2023-05-28 19:01:48', '2025-05-28 19:01:48', '2023-05-28 20:01:48', NULL, NULL, NULL),
+(2849, 'Inserir', 'New alunos', '7', '1', '2023-05-28 19:01:48', '2025-05-28 19:01:48', '2023-05-28 20:01:48', NULL, NULL, NULL),
+(2850, 'Inserir', 'Candidato', '10', '1', '2023-06-03 10:39:16', '2025-06-03 10:39:16', '2023-06-03 11:39:16', NULL, NULL, NULL),
+(2851, 'Inserir', 'Atualizar Ducumentos do Candidato', '10', '1', '2023-06-03 10:41:00', '2025-06-03 10:41:00', '2023-06-03 11:41:00', NULL, NULL, NULL),
+(2852, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-03 00:00:00', '2025-06-03 10:41:31', '2023-06-03 11:41:31', NULL, NULL, NULL),
+(2853, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-03 00:00:00', '2025-06-03 10:41:39', '2023-06-03 11:41:39', NULL, NULL, NULL),
+(2854, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-03 00:00:00', '2025-06-03 10:41:49', '2023-06-03 11:41:49', NULL, NULL, NULL),
+(2855, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-03 00:00:00', '2025-06-03 10:42:00', '2023-06-03 11:42:00', NULL, NULL, NULL),
+(2856, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-03 00:00:00', '2025-06-03 10:42:07', '2023-06-03 11:42:07', NULL, NULL, NULL),
+(2857, 'Actualizar', 'Update disciplinas', '9', '1', '2023-06-04 00:00:00', '2025-06-04 17:07:45', '2023-06-04 18:07:45', NULL, NULL, NULL),
+(2858, 'Inserir', 'New salas', '3', '1', '2023-06-10 18:19:02', '2025-06-10 18:19:02', '2023-06-10 19:19:02', NULL, NULL, NULL),
+(2859, 'Actualizar', 'Update campanhas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 18:56:13', '2023-06-10 19:56:13', NULL, NULL, NULL),
+(2860, 'Actualizar', 'Update campanhas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 18:57:22', '2023-06-10 19:57:22', NULL, NULL, NULL),
+(2861, 'Actualizar', 'Update campanhas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 18:57:50', '2023-06-10 19:57:50', NULL, NULL, NULL),
+(2862, 'Actualizar', 'Update campanhas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 19:02:17', '2023-06-10 20:02:17', NULL, NULL, NULL),
+(2863, 'Actualizar', 'Update campanhas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 19:04:16', '2023-06-10 20:04:16', NULL, NULL, NULL),
+(2864, 'Actualizar', 'Update salas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 19:05:31', '2023-06-10 20:05:31', NULL, NULL, NULL),
+(2865, 'Deletar', 'Deletar disciplinas', '3', '1', '2023-06-10 00:00:00', '2025-06-10 19:13:46', '2023-06-10 20:13:46', NULL, NULL, NULL),
+(2866, 'Deletar', 'Deletar disciplinas', '3', '1', '2023-06-10 00:00:00', '2025-06-10 19:13:49', '2023-06-10 20:13:49', NULL, NULL, NULL),
+(2867, 'Deletar', 'Deletar turmas', '2', '1', '2023-06-10 00:00:00', '2025-06-10 20:01:48', '2023-06-10 21:01:48', NULL, NULL, NULL),
+(2868, 'Actualizar', 'Update turmas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 20:13:59', '2023-06-10 21:13:59', NULL, NULL, NULL),
+(2869, 'Actualizar', 'Update turmas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 20:14:03', '2023-06-10 21:14:03', NULL, NULL, NULL),
+(2870, 'Actualizar', 'Update turmas', '1', '1', '2023-06-10 00:00:00', '2025-06-10 20:14:06', '2023-06-10 21:14:06', NULL, NULL, NULL),
+(2871, 'Inserir', 'New turmas', '3', '1', '2023-06-10 20:27:10', '2025-06-10 20:27:10', '2023-06-10 21:27:10', NULL, NULL, NULL),
+(2872, 'Actualizar', 'Update turmas', '3', '1', '2023-06-10 00:00:00', '2025-06-10 20:27:24', '2023-06-10 21:27:24', NULL, NULL, NULL),
+(2873, 'Actualizar', 'Update turmas', '3', '1', '2023-06-10 00:00:00', '2025-06-10 20:27:30', '2023-06-10 21:27:30', NULL, NULL, NULL),
+(2874, 'Actualizar', 'Update candidatos', '10', '1', '2023-06-10 00:00:00', '2025-06-10 20:44:40', '2023-06-10 21:44:40', NULL, NULL, NULL),
+(2875, 'Reset', 'Reset da palavra pass', '5', '1', '2023-06-16 00:00:00', '2025-06-16 14:11:02', '2023-06-16 15:11:02', NULL, NULL, NULL),
+(2876, 'Reset', 'Reset da palavra pass', '5', '5', '2023-06-16 00:00:00', '2025-06-16 14:27:51', '2023-06-16 15:27:51', NULL, NULL, NULL),
+(2877, 'Reset', 'Reset da palavra pass', '5', '5', '2023-06-16 00:00:00', '2025-06-16 15:14:23', '2023-06-16 16:14:23', NULL, NULL, NULL),
+(2878, 'Reset', 'Reset da palavra pass', '5', '5', '2023-06-16 00:00:00', '2025-06-16 15:18:25', '2023-06-16 16:18:25', NULL, NULL, NULL),
+(2879, 'Reset', 'Reset da palavra pass', '26', '1', '2023-06-17 00:00:00', '2025-06-17 15:10:00', '2023-06-17 16:10:00', NULL, NULL, NULL),
+(2880, 'Reset', 'Reset da palavra pass', '19', '1', '2023-06-17 00:00:00', '2025-06-17 16:41:37', '2023-06-17 17:41:37', NULL, NULL, NULL),
+(2881, 'Reset', 'Reset da palavra pass', '19', '19', '2023-06-17 00:00:00', '2025-06-17 16:44:39', '2023-06-17 17:44:39', NULL, NULL, NULL),
+(2882, 'Actualizar', 'Actualizar Utilizador', '5', '1', '2023-06-17 00:00:00', '2025-06-17 17:01:57', '2023-06-17 18:01:57', NULL, NULL, NULL),
+(2883, 'Actualizar', 'Update funcionarios', '3', '1', '2023-06-17 00:00:00', '2025-06-17 17:01:57', '2023-06-17 18:01:57', NULL, NULL, NULL),
+(2884, 'Reset', 'Reset da palavra pass', '5', '1', '2023-06-17 00:00:00', '2025-06-17 17:02:25', '2023-06-17 18:02:25', NULL, NULL, NULL),
+(2885, 'Inserir', 'New notas', '9', '1', '2023-06-21 13:23:09', '2025-06-21 13:23:09', '2023-06-21 14:23:09', NULL, NULL, NULL),
+(2886, 'Actualizar', 'Update notas', '4', '1', '2023-06-21 00:00:00', '2025-06-21 13:23:37', '2023-06-21 14:23:37', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `campanhas`
+--
+
+CREATE TABLE `campanhas` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `inicio` date NOT NULL,
+  `fim` date NOT NULL,
+  `maximo_candidados` smallint(4) NOT NULL,
+  `estado` tinyint(1) DEFAULT '0',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `campanhas`
+--
+
+INSERT INTO `campanhas` (`id`, `nome`, `inicio`, `fim`, `maximo_candidados`, `estado`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(2, 'Curso de Informatica', '2023-05-15', '2023-05-16', 30, 0, '2023-05-15 22:00:27', '2023-05-28 20:51:24', NULL),
+(3, 'Electronica e Telecomunucaçao', '2023-05-26', '2023-06-08', 20, 0, '2023-05-20 16:37:10', '2023-05-28 20:51:27', NULL);
 
 -- --------------------------------------------------------
 
@@ -2681,17 +2791,20 @@ INSERT INTO `auditoria` (`idauditoria`, `accao`, `processo`, `registo`, `utiliza
 CREATE TABLE `candidatos` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
+  `bi` varchar(19) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `telefone` varchar(9) DEFAULT NULL,
+  `telefone` varchar(19) DEFAULT NULL,
+  `campanha` int(11) NOT NULL,
   `datanascimento` date DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   `atestado_medico` varchar(250) DEFAULT NULL,
   `foto_tipo_pass` varchar(250) DEFAULT NULL,
   `copia_bi` varchar(250) DEFAULT NULL,
   `declaracao_notas` varchar(250) DEFAULT NULL,
-  `certificado` varchar(250) DEFAULT NULL
+  `certificado` varchar(250) DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2733,14 +2846,6 @@ CREATE TABLE `cursos` (
   `limite_alunos` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `cursos`
---
-
-INSERT INTO `cursos` (`created_at`, `updated_at`, `deleted_at`, `nome`, `sigla`, `id`, `limite_alunos`) VALUES
-(NULL, NULL, NULL, 'Produto X', 'PX', 7, 32),
-(NULL, NULL, NULL, 'Produto X2', 'PX2', 8, 33);
-
 -- --------------------------------------------------------
 
 --
@@ -2750,21 +2855,12 @@ INSERT INTO `cursos` (`created_at`, `updated_at`, `deleted_at`, `nome`, `sigla`,
 CREATE TABLE `disciplinas` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   `ano` int(11) DEFAULT NULL,
   `curso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `disciplinas`
---
-
-INSERT INTO `disciplinas` (`id`, `nome`, `created_at`, `updated_at`, `deleted_at`, `ano`, `curso`) VALUES
-(9, 'Produto X3', NULL, NULL, NULL, 2, 8),
-(10, 'Produto X3', NULL, NULL, NULL, 2, 7),
-(11, 'Matematica', NULL, NULL, NULL, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -2806,17 +2902,20 @@ CREATE TABLE `notas` (
   `valor` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `notas`
+-- Estrutura da tabela `professores`
 --
 
-INSERT INTO `notas` (`id`, `aluno`, `prova`, `created_at`, `updated_at`, `deleted_at`, `valor`) VALUES
-(3, 4, 4, '2023-05-13 19:14:20', NULL, NULL, 12),
-(4, 5, 4, '2023-05-13 19:14:24', NULL, NULL, 12),
-(5, 4, 5, '2023-05-13 19:17:01', NULL, NULL, 20),
-(6, 5, 5, '2023-05-13 19:17:07', NULL, NULL, 12),
-(7, 4, 6, '2023-05-13 19:19:57', NULL, NULL, 20),
-(8, 5, 6, '2023-05-13 19:20:01', NULL, NULL, 12);
+CREATE TABLE `professores` (
+  `id` int(11) NOT NULL,
+  `funcionario` int(11) NOT NULL,
+  `disciplina` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -2836,17 +2935,6 @@ CREATE TABLE `provas` (
   `trimestre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `provas`
---
-
-INSERT INTO `provas` (`created_at`, `updated_at`, `deleted_at`, `nome`, `data`, `ano`, `id`, `disciplina`, `trimestre`) VALUES
-(NULL, NULL, NULL, 'Prova do Professor', '2023-05-06', 1, 1, 9, 1),
-(NULL, NULL, NULL, 'Segunda Prova', '2023-05-31', 1, 2, 9, 1),
-(NULL, NULL, NULL, 'Prova do Professor', '0000-00-00', 1, 4, 10, 1),
-(NULL, NULL, NULL, 'Prova do Professor', '0000-00-00', 1, 5, 11, 1),
-(NULL, NULL, NULL, 'Segunda Prova', '0000-00-00', 1, 6, 11, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -2856,7 +2944,6 @@ INSERT INTO `provas` (`created_at`, `updated_at`, `deleted_at`, `nome`, `data`, 
 CREATE TABLE `salas` (
   `id` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
-  `descricao` text,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_ate` datetime DEFAULT NULL
@@ -2866,9 +2953,10 @@ CREATE TABLE `salas` (
 -- Extraindo dados da tabela `salas`
 --
 
-INSERT INTO `salas` (`id`, `nome`, `descricao`, `created_at`, `updated_at`, `deleted_ate`) VALUES
-(1, '1', NULL, '2023-05-07 18:14:48', '2023-05-07 18:16:23', NULL),
-(2, '2', NULL, '2023-05-07 18:14:48', '2023-05-07 18:16:32', NULL);
+INSERT INTO `salas` (`id`, `nome`, `created_at`, `updated_at`, `deleted_ate`) VALUES
+(1, '1', '2023-05-07 18:14:48', '2023-06-10 20:05:31', NULL),
+(2, '2', '2023-05-07 18:14:48', '2023-05-07 18:16:32', NULL),
+(3, '3', '2023-06-10 19:19:02', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2909,14 +2997,6 @@ CREATE TABLE `turmas` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `turmas`
---
-
-INSERT INTO `turmas` (`id`, `nome`, `sala`, `curso`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'A - Manhã', 1, 7, '2023-05-07 18:18:20', '2023-05-07 19:28:26', NULL),
-(2, 'A - Manhã', 2, 8, '2023-05-07 18:18:20', '2023-05-07 19:28:33', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -2948,11 +3028,10 @@ CREATE TABLE `utilizadores` (
 --
 
 INSERT INTO `utilizadores` (`password`, `email`, `bairro`, `rua`, `municipio`, `n_casa`, `id`, `telefone`, `bi`, `sexo`, `foto`, `nome`, `ultimoAcesso`, `api_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-('$2y$10$xdpHH/E0PsWkPMHZHtxsle9YrO.cs9QdFUqNcNTA7XWth09.Hfxha', 'admin@admin.com', NULL, NULL, NULL, NULL, 1, NULL, NULL, 'M', NULL, 'Super Admin', '2023-05-13 16:36:59', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUSEVfQ0xBSU4iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2ODM5OTU4MTksIm5iZiI6MTY4Mzk5NTgxOSwiZXhwIjoxNjg0MDg0ODE5LCJkYXRhIjp7ImFjZXNzbyI6MCwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpZCI6IjEifX0.AkTyvWtGgh98M5gsr566n9', NULL, NULL, NULL),
-('$2y$10$Z.Ih7tTEJWzTs4PiTbyZS.Q4hMQXFJpofHVXqyXaMyX7KTLJyX7tO', 'manomuanda@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Talatona', '232', 5, '+24499030', '2434234324324', 'M', 'http://localhost:8080//file/utilizadores/5.jpeg', 'Arsénio Muanda', '2023-04-25 10:14:53', '', NULL, NULL, NULL),
-('$2y$10$GvlVTW5fG30VQehwiw9e..wW.0E6A68t4jwXL3gg0rJWC4/jNhP1.', 'manomuanda12@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Talatona', 'E12,32', 15, '+244990302023', '24342335432432', 'M', 'http://localhost:8080//file/utilizadores/15.png', 'Arsénio Muandas', NULL, '', NULL, NULL, NULL),
-('$2y$10$39L4qCVCS9AaXyGW8rElDubonJuF.fDc2v6GQqxyxdFkhoa2Z1jLC', 'aluno@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Município do Belas', '232', 18, '+244990302023', '98357984234', 'M', NULL, 'Pedro Paulo', NULL, '', NULL, NULL, NULL),
-('$2y$10$Szdl9CaGxZV1JGsNBg1lcuK6zTwB/Gc9HUrLN8h17dXWbb8XfIOp2', 'aluno1@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Município do Belas', 'E12,32', 19, '9415386941', '23784627834', 'M', NULL, 'Arsénio', NULL, '', NULL, NULL, NULL);
+('$2y$10$xdpHH/E0PsWkPMHZHtxsle9YrO.cs9QdFUqNcNTA7XWth09.Hfxha', 'admin@admin.com', NULL, NULL, NULL, NULL, 1, NULL, NULL, 'M', NULL, 'Super Admin', '2023-06-21 13:21:56', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJUSEVfQ0xBSU4iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2ODczNTM3MTYsIm5iZiI6MTY4NzM1MzcxNiwiZXhwIjoxNjg3NDQyNzE2LCJkYXRhIjp7ImFjZXNzbyI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpZCI6IjEiLCJhbHVubyI6bnVsbH19.0aLuJ', NULL, NULL, NULL),
+('$2y$10$PwIFj/u1SkU/BMh//9ud2.23dmJwuBfh6qdRL4oZsRVSTXgMvmdo6', 'manomuanda@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Talatona', '232', 5, '+24499030', '2434234324324', 'M', 'http://localhost:8080//file/utilizadores/5.jpeg', 'Professor Muanda', '2023-06-17 17:02:30', '', NULL, NULL, NULL),
+('$2y$10$GvlVTW5fG30VQehwiw9e..wW.0E6A68t4jwXL3gg0rJWC4/jNhP1.', 'manomuanda12@gmail.com', 'Nova Cidade de Kilamba', '32 Almeida', 'Talatona', 'E12,32', 15, '+244990302023', '24342335432432', 'M', 'http://localhost:8080//file/utilizadores/15.png', 'Arsénio Muandas', '2023-06-16 16:02:18', '', NULL, NULL, NULL),
+('$2y$10$BPbmVF00JyjwbGv2CukFmuEIqyxH1bURGFX8YYW7S7RJP7nNp33Ya', 'manomuanda1@gmail.com', NULL, NULL, NULL, NULL, 26, '+24499030', '47829989', '', NULL, 'Arsénio Muanda', '2023-06-17 16:23:27', '', NULL, NULL, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -2981,10 +3060,18 @@ ALTER TABLE `auditoria`
   ADD PRIMARY KEY (`idauditoria`);
 
 --
+-- Índices para tabela `campanhas`
+--
+ALTER TABLE `campanhas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `candidatos`
 --
 ALTER TABLE `candidatos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `bi` (`bi`),
+  ADD KEY `campanha` (`campanha`);
 
 --
 -- Índices para tabela `categorias`
@@ -3023,6 +3110,14 @@ ALTER TABLE `notas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `aluno` (`aluno`,`prova`),
   ADD KEY `fk_nota_2` (`prova`);
+
+--
+-- Índices para tabela `professores`
+--
+ALTER TABLE `professores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `funcionario` (`funcionario`,`disciplina`),
+  ADD KEY `fk_professor_2` (`disciplina`);
 
 --
 -- Índices para tabela `provas`
@@ -3068,7 +3163,7 @@ ALTER TABLE `utilizadores`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `anos`
@@ -3080,7 +3175,13 @@ ALTER TABLE `anos`
 -- AUTO_INCREMENT de tabela `auditoria`
 --
 ALTER TABLE `auditoria`
-  MODIFY `idauditoria` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2796;
+  MODIFY `idauditoria` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2887;
+
+--
+-- AUTO_INCREMENT de tabela `campanhas`
+--
+ALTER TABLE `campanhas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `candidatos`
@@ -3116,7 +3217,13 @@ ALTER TABLE `funcionarios`
 -- AUTO_INCREMENT de tabela `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `professores`
+--
+ALTER TABLE `professores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `provas`
@@ -3128,7 +3235,7 @@ ALTER TABLE `provas`
 -- AUTO_INCREMENT de tabela `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `trimestres`
@@ -3140,13 +3247,13 @@ ALTER TABLE `trimestres`
 -- AUTO_INCREMENT de tabela `turmas`
 --
 ALTER TABLE `turmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `utilizadores`
 --
 ALTER TABLE `utilizadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restrições para despejos de tabelas
@@ -3159,6 +3266,12 @@ ALTER TABLE `alunos`
   ADD CONSTRAINT `FK_alunos_2` FOREIGN KEY (`curso`) REFERENCES `cursos` (`id`) ON DELETE SET NULL,
   ADD CONSTRAINT `FK_alunos_4` FOREIGN KEY (`utilizador`) REFERENCES `utilizadores` (`id`),
   ADD CONSTRAINT `FK_alunos_5` FOREIGN KEY (`turma`) REFERENCES `turmas` (`id`);
+
+--
+-- Limitadores para a tabela `candidatos`
+--
+ALTER TABLE `candidatos`
+  ADD CONSTRAINT `candidatos_ibfk_1` FOREIGN KEY (`campanha`) REFERENCES `campanhas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `disciplinas`
@@ -3180,6 +3293,13 @@ ALTER TABLE `funcionarios`
 ALTER TABLE `notas`
   ADD CONSTRAINT `fk_nota_1` FOREIGN KEY (`aluno`) REFERENCES `alunos` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_nota_2` FOREIGN KEY (`prova`) REFERENCES `provas` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `professores`
+--
+ALTER TABLE `professores`
+  ADD CONSTRAINT `fk_professor_1` FOREIGN KEY (`funcionario`) REFERENCES `funcionarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_professor_2` FOREIGN KEY (`disciplina`) REFERENCES `disciplinas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `provas`

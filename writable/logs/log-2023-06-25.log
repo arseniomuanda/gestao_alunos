@@ -1,0 +1,312 @@
+INFO - 2023-06-25 12:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 12:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 12:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 13:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 13:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 13:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-25 13:19:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:19:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = Desenhador Projetista')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:20:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:20:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = 9 ')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:22:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:22:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = 9')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:22:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:22:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos`')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:22:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:22:49 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FR' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos`')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:23:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Projetista' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:23:44 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Projetista' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = Desenhador Projetista')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:28:15 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Projetista' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:28:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Projetista' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = Desenhador Projetista')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:29:34 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:29:34 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(184): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` = ')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:30:14 --> Only arrays and Traversables can be unpacked
+in APPPATH/Controllers/Candidaturas.php on line 184.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:30:17 --> Only arrays and Traversables can be unpacked
+in APPPATH/Controllers/Candidaturas.php on line 184.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:30:38 --> Cannot unpack array with string keys
+in APPPATH/Controllers/Candidaturas.php on line 184.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:31:17 --> Only arrays and Traversables can be unpacked
+in APPPATH/Controllers/Candidaturas.php on line 184.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:31:39 --> Cannot unpack array with string keys
+in APPPATH/Controllers/Candidaturas.php on line 184.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-25 13:32:14 --> Attempt to read property "id" on null
+in APPPATH/Views/candidaturas/candidato_perfil.php on line 267.
+ 1 APPPATH/Views/candidaturas/candidato_perfil.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'APPPATH/Views/candidaturas/candidato_perfil.php', 267)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/candidaturas/candidato_perfil.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('candidaturas/candidato_perfil', [], true)
+ 5 APPPATH/Controllers/Candidaturas.php(187): view('candidaturas/candidato_perfil', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-25 13:34:51 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `cursos`...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cursos`...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cursos`...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Candidaturas.php(183): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 13:34:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Candidaturas.php(183): CodeIgniter\Database\BaseConnection->query('SELECT `cursos`.*, \'Primeira Opção\' AS opcao, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos` WHERE `cursos`.`id` IN (9,)')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Candidaturas->perfil('1')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Candidaturas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+INFO - 2023-06-25 15:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 15:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-25 15:15:13 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(174): mysqli->real_connect('localhost:8889', 'root', 'root', 'gestao_alunos', 3306, '', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 15:15:13 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS total FROM utilizadores WHERE email = \'admin@admin.com\'')
+ 3 APPPATH/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Login->login()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+INFO - 2023-06-25 15:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-25 15:15:15 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(174): mysqli->real_connect('localhost:8889', 'root', 'root', 'gestao_alunos', 3306, '', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-25 15:15:15 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS total FROM utilizadores WHERE email = \'admin@admin.com\'')
+ 3 APPPATH/Controllers/Login.php(95): App\Controllers\Login->validar_login('admin@admin.com')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Login->login()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+INFO - 2023-06-25 15:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-25 15:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

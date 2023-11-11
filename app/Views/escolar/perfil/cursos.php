@@ -65,7 +65,7 @@
                              <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                  <h5 class="card-title">Descrição</h5>
                                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
-                                 
+
                                  <h5 class="card-title">Dados do curso</h5>
 
                                  <div class="row">
@@ -129,12 +129,102 @@
                              </div>
 
                              <div class="tab-pane fade pt-3" id="profile-disciplinas">
+                                 <div class="card">
+                                     <div class="card-body">
+
+                                         <!-- Table with stripped rows -->
+                                         <table class="table datatable">
+                                             <thead>
+                                                 <tr>
+                                                     <th scope="col">#</th>
+                                                     <th scope="col">Name</th>
+                                                     <th scope="col">Ano</th>
+                                                     <th scope="col">Opção</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody>
+                                                 <?php $index = 0;
+                                                    foreach ($disciplinas as $key => $value) {  ?>
+                                                     <tr>
+                                                         <th scope="row"><?= ++$index ?></th>
+                                                         <td><?= $value->nome ?></td>
+                                                         <td><?= $value->ano ?></td>
+                                                         <td><a href="/escolar/disciplinas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                                     </tr>
+                                                 <?php } ?>
+                                             </tbody>
+                                         </table>
+                                         <!-- End Table with stripped rows -->
+
+                                     </div>
+                                 </div>
                              </div>
 
                              <div class="tab-pane fade pt-3" id="profile-profes">
+                                 <div class="card">
+                                     <div class="card-body">
+
+                                         <!-- Table with stripped rows -->
+                                         <table class="table datatable">
+                                             <thead>
+                                                 <tr>
+                                                     <th scope="col">#</th>
+                                                     <th scope="col">Nome</th>
+                                                     <th scope="col">Disciplina</th>
+                                                     <th scope="col">Opção</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody>
+                                                 <?php $index = 0;
+                                                    foreach ($professores as $key => $value) {  ?>
+                                                     <tr>
+                                                         <th scope="row"><?= ++$index ?></th>
+                                                         <td><?= $value->nome ?></td>
+                                                         <td><?= $value->disciplina ?></td>
+                                                         <td><a href="/rh/funcionarios/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                                     </tr>
+                                                 <?php } ?>
+                                             </tbody>
+                                         </table>
+                                         <!-- End Table with stripped rows -->
+
+                                     </div>
+                                 </div>
                              </div>
 
                              <div class="tab-pane fade pt-3" id="profile-alunos">
+                                 <div class="card">
+                                     <div class="card-body">
+                                         <!-- Table with stripped rows -->
+                                         <table class="table datatable">
+                                             <thead>
+                                                 <tr>
+                                                     <th scope="col">#</th>
+                                                     <th scope="col">Nome</th>
+                                                     <th scope="col">Idade</th>
+                                                     <th scope="col">Sexo</th>
+                                                     <th scope="col">Turma</th>
+                                                     <th scope="col">Opção</th>
+                                                 </tr>
+                                             </thead>
+                                             <tbody>
+                                                 <?php $index = 0;
+                                                    foreach ($alunos as $key => $value) {  ?>
+                                                     <tr>
+                                                         <th scope="row"><?= ++$index ?></th>
+                                                         <td><?= $value->nome ?></td>
+                                                         <td><?= (int) date('Y') - (int) date('Y', strtotime($value->datanascimento)) ?></td>
+                                                         <td><?= $value->sexo == 'M' ? 'Masculino' : 'Feminino' ?></td>
+                                                         <td><?= $value->turma ?></td>
+                                                         <td><a href="/escolar/alunos/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                                     </tr>
+                                                 <?php } ?>
+                                             </tbody>
+                                         </table>
+                                         <!-- End Table with stripped rows -->
+
+                                     </div>
+                                 </div>
                              </div>
 
                          </div><!-- End Bordered Tabs -->

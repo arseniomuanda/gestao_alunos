@@ -1,15 +1,25 @@
  <main id="main" class="main">
 
-     <div class="pagetitle">
-         <h1>Perfil</h1>
-         <nav>
-             <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                 <li class="breadcrumb-item"><a href="/candidaturas/vagas">Candidaturas</a></li>
-                 <li class="breadcrumb-item active">Perfil</li>
-             </ol>
-         </nav>
-     </div><!-- End Page Title -->
+     <div class="row">
+         <div class="col-lg-9">
+
+             <div class="pagetitle">
+
+                 <h1>Perfil</h1>
+                 <nav>
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a href="/">Home</a></li>
+                         <li class="breadcrumb-item"><a href="/candidaturas/vagas">Candidaturas</a></li>
+                         <li class="breadcrumb-item active">Perfil</li>
+                     </ol>
+                 </nav>
+             </div>
+         </div>
+
+         <div class="col-lg-3">
+             <button v-if="acesso == 1" onclick="vue_app.removeListaCandidatos(<?= $vaga->id ?>)" class="btn btn-block btn-danger">Limpar Lista</button>
+         </div>
+     </div>
 
      <section class="section profile">
          <div class="row">
@@ -140,7 +150,7 @@
                                                  <td><?= (int)date('Y') - (int)date('Y', strtotime($value->datanascimento)) ?></td>
                                                  <td><?= $value->campanha ?></td>
                                                  <td><button onclick="vue_app.removeDisciplica(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
-                                                 <td><a href="/candidaturas/vagas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                                 <td><a href="/candidaturas/candidatos/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                              </tr>
                                          <?php } ?>
                                      </tbody>

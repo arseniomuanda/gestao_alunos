@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\Auditoria;
-use App\Models\DisciplinaModel;
 use App\Models\TurmaModel;
 use CodeIgniter\RESTful\ResourceController;
 use Config\Database;
@@ -46,9 +45,9 @@ class Turmas extends ResourceController
     public function index()
     {
         $data = [
-            'disciplinas' => $this->db->query("SELECT disciplinas.id, disciplinas.nome, anos.nome AS ano, cursos.nome AS curso, cursos.sigla FROM `disciplinas` INNER JOIN anos ON disciplinas.ano = anos.id INNER JOIN cursos ON disciplinas.curso = cursos.id")->getResult(),
+            'turmas' => $this->db->query("SELECT turmas.*, salas.nome AS sala, cursos.nome AS curso FROM `turmas` INNER JOIN salas ON turmas.sala = salas.id INNER JOIN cursos ON turmas.curso = cursos.id")->getResult(),
         ];
-        return view('componentes/header') . view('componentes/sider') . view('escolar/lista/disciplinas', $data) . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('configuracao/lista/turmas', $data) . view('componentes/footer');
     }
 
     public function add()
@@ -83,6 +82,7 @@ class Turmas extends ResourceController
         $user = getUserToken();
 
         $data = [
+            'code'=> 200,
             'data' => $this->db->query("SELECT * FROM turmas WHERE curso = $id")->getResult(),
         ];
 
@@ -132,23 +132,21 @@ class Turmas extends ResourceController
     public function adicionar()
     {
         $data = [
-            'anos' => $this->db->query("SELECT * FROM anos")->getResult(),
-            'cursos' => $this->db->query("SELECT * FROM cursos")->getResult()
+            'salas' => $this->db->query("SELECT * FROM `salas`")->getResult(),
+            'cursos' => $this->db->query("SELECT * FROM `cursos`")->getResult(),
         ];
-        return view('componentes/header') . view('componentes/sider') . view('escolar/adicionar/disciplina', $data) . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('configuracao/adicionar/turmas', $data) . view('componentes/footer');
     }
 
     public function perfil($id)
     {
         $data = [
-            'anos' => $this->db->query("SELECT * FROM anos")->getResult(),
-            'cursos' => $this->db->query("SELECT * FROM cursos")->getResult(),
-            'disciplina' => $this->db->query("SELECT disciplinas.*, cursos.nome AS curso_nome, anos.nome ano_nome FROM disciplinas INNER JOIN cursos ON disciplinas.curso = cursos.id INNER JOIN anos ON disciplinas.ano = anos.id WHERE disciplinas.id = $id")->getRow(0),
-            'primeiro' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 1")->getResult(),
-            'segundo' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 2")->getResult(),
-            'terceiro' => $this->db->query("SELECT * FROM `provas` WHERE disciplina = $id AND trimestre = 3")->getResult(),
+            'salas' => $this->db->query("SELECT * FROM `salas`")->getResult(),
+            'cursos' => $this->db->query("SELECT * FROM `cursos`")->getResult(),
+            'turma' => $this->db->query("SELECT turmas.*, salas.nome AS sala, salas.id AS sala_id, cursos.nome AS curso, cursos.id AS curso_id FROM `turmas` INNER JOIN salas ON turmas.sala = salas.id INNER JOIN cursos ON turmas.curso = cursos.id WHERE turmas.id = $id")->getRow(),
+            'alunos' => $this->db->query("SELECT alunos.*, utilizadores.nome, utilizadores.sexo, cursos.nome AS curso, turmas.nome AS turma FROM alunos INNER JOIN utilizadores ON alunos.utilizador = utilizadores.id INNER JOIN cursos ON alunos.curso = cursos.id INNER JOIN turmas ON alunos.turma = turmas.id WHERE alunos.turma = $id")->getResult()
         ];
 
-        return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/disciplina', $data) . view('componentes/footer');
+        return view('componentes/header') . view('componentes/sider') . view('configuracao/perfil/turmas', $data) . view('componentes/footer');
     }
 }

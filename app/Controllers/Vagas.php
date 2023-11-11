@@ -44,9 +44,9 @@ class Vagas extends ResourceController
 
     public function mostrar($id = null){
         if(is_null($id)){
-            $data = $this->db->query("SELECT * FROM " . $this->campanhaModel->table)->getResult();
+            $data = $this->db->query("SELECT * FROM " . $this->campanhaModel->table . " WHERE estado = 1")->getResult();
         }else{
-            $data = $this->db->query("SELECT * FROM " . $this->campanhaModel->table . " WHERE id = $id")->getRow();
+            $data = $this->db->query("SELECT campanhas.*, (SELECT COUNT(*) FROM candidatos WHERE candidatos.campanha = campanhas.id ) AS cadastrados FROM campanhas WHERE campanhas.id = $id AND estado = 1 GROUP BY campanhas.id;")->getRow();
         }
         return $this->respond($data);
     }
@@ -54,7 +54,7 @@ class Vagas extends ResourceController
     public function index()
     {
         $data = [
-            'vagas' => $this->db->query("SELECT * FROM " . $this->campanhaModel->table)->getResult()
+            'vagas' => $this->db->query("SELECT campanhas.*, (SELECT COUNT(*) FROM candidatos WHERE candidatos.campanha = campanhas.id AND candidatos.estado = 1) AS alunos FROM `campanhas`")->getResult()
         ];
         return view('componentes/header') . view('componentes/sider') . view('candidaturas/vagas', $data) . view('componentes/footer');
     }
@@ -62,8 +62,8 @@ class Vagas extends ResourceController
     public function perfil($id)
     {
         $data = [
-            'vaga' => $this->db->query("SELECT * FROM " . $this->campanhaModel->table . " WHERE id = $id")->getRow(),
-            'candidatos' => $this->db->query("SELECT candidatos.*, campanhas.nome campanha FROM `candidatos` INNER JOIN campanhas ON candidatos.campanha = candidatos.id WHERE campanha = $id")->getResult()
+            'vaga' => $this->db->query("SELECT campanhas.*, (SELECT COUNT(*) FROM candidatos WHERE candidatos.campanha = campanhas.id) AS cadastrados FROM " . $this->campanhaModel->table . " WHERE id = $id")->getRow(),
+            'candidatos' => $this->db->query("SELECT candidatos.*, campanhas.nome campanha FROM `candidatos` INNER JOIN campanhas ON candidatos.campanha = campanhas.id WHERE campanha = $id;")->getResult()
         ];
         return view('componentes/header') . view('componentes/sider') . view('candidaturas/vaga_perfil', $data) . view('componentes/footer');
     }
@@ -140,5 +140,17 @@ class Vagas extends ResourceController
 
         deletarnormal($id, $this->db, $this->campanhaModel, $user->id, $this->auditoriaModel);
         return $this->respond([], 200);
+    }
+
+    public function removeAll($id)
+    {
+        helper('funcao');
+        $user = getUserToken();
+
+        if ($user->id != 1) {
+            return $this->respond(returnVoid([], (int) 400), 400, 'Apenas utilizador autorizado');
+        }
+        $resposta = $this->db->query("DELETE FROM `candidatos` WHERE campanha = $id");
+        return $this->respond($resposta, 200);
     }
 }

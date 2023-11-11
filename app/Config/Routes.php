@@ -44,11 +44,22 @@ $routes->group('api', static function ($routes) {
         $routes->post('remove/(:num)', 'Funcionarios::remove/$1', ['filter' => 'authFilter']);
     });
 
+    $routes->group('candidatos', static function ($routes) {
+        $routes->post('new', 'Candidaturas::add');
+        $routes->post('updateImagens/(:num)', 'Candidaturas::updateImagens/$1', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Candidaturas::update/$1', ['filter' => 'authFilter']);
+        $routes->post('updateu/(:num)', 'Candidaturas::updateU/$1');
+        $routes->post('update_estado/(:num)', 'Candidaturas::updateEstado/$1', ['filter' => 'authFilter']);
+        $routes->post('matricuar/(:num)', 'Alunos::matricular/$1', ['filter' => 'authFilter']);
+        $routes->get('buscar/(:any)', 'Candidaturas::buscarPorBi/$1');
+    });
+
     $routes->group('cursos', static function ($routes) {
         $routes->post('new', 'Cursos::add', ['filter' => 'authFilter']);
         $routes->post('update/(:num)', 'Cursos::actualizar/$1', ['filter' => 'authFilter']);
         $routes->post('remove/(:num)', 'Cursos::remove/$1', ['filter' => 'authFilter']);
         $routes->get('disciplina/(:num)', 'Cursos::getDisciplina/$1', ['filter' => 'authFilter']);
+        $routes->get('listar', 'Cursos::listar');
     });
 
     $routes->group('disciplinas', static function ($routes) {
@@ -82,8 +93,15 @@ $routes->group('api', static function ($routes) {
         $routes->post('new', 'Vagas::add', ['filter' => 'authFilter']);
         $routes->post('update/(:num)', 'Vagas::actualizar/$1', ['filter' => 'authFilter']);
         $routes->post('remove/(:num)', 'Vagas::remove/$1', ['filter' => 'authFilter']);
+        $routes->post('removeAll/(:num)', 'Vagas::removeAll/$1', ['filter' => 'authFilter']);
         $routes->get('listar', 'Vagas::mostrar');
         $routes->get('listar/(:num)', 'Vagas::mostrar/$1');
+    });
+
+    $routes->group('salas', static function ($routes) {
+        $routes->post('new', 'Salas::add', ['filter' => 'authFilter']);
+        $routes->post('update/(:num)', 'Salas::actualizar/$1', ['filter' => 'authFilter']);
+        $routes->post('remove/(:num)', 'Salas::remove/$1', ['filter' => 'authFilter']);
     });
 });
 
@@ -133,6 +151,16 @@ $routes->group('rh', static function ($routes) {
     $routes->get('funcionarios', 'Funcionarios::index');
     $routes->get('funcionarios/(:num)', 'Funcionarios::perfil/$1');
     $routes->get('funcionarios/novo', 'Funcionarios::adicionar');
+});
+
+$routes->group('config', static function ($routes) {
+    $routes->get('salas', 'Salas::index');
+    $routes->get('salas/(:num)', 'Salas::perfil/$1');
+    $routes->get('salas/novo', 'Salas::adicionar');
+
+    $routes->get('turmas', 'Turmas::index');
+    $routes->get('turmas/(:num)', 'Turmas::perfil/$1');
+    $routes->get('turmas/novo', 'Turmas::adicionar');
 });
 
 

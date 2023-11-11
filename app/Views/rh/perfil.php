@@ -51,6 +51,11 @@
                                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Utilizador</button>
                              </li>
 
+                             <?php if ($funcionario->cat_id == 2) { ?>
+                                 <li class="nav-item">
+                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-professor">Professor</button>
+                                 </li>
+                             <?php } ?>
                          </ul>
                          <div class="tab-content pt-2">
 
@@ -58,7 +63,7 @@
                                  <h5 class="card-title">Descrição</h5>
                                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
 
-                                 <h5 class="card-title">Dados do cadidato</h5>
+                                 <h5 class="card-title">Dados do Funcionário</h5>
 
                                  <div class="row">
                                      <div class="col-lg-3 col-md-4 label ">Nome Completo</div>
@@ -198,7 +203,7 @@
 
                              <div class="tab-pane fade pt-3" id="profile-change-password">
                                  <!-- Change Password Form -->
-                                 <form onsubmit="event.preventDefault();vue_app.editPass(<?= $funcionario->id ?>)">
+                                 <form onsubmit="event.preventDefault();vue_app.editPass(<?= $funcionario->utilizador ?>)">
 
                                      <div class="row mb-3">
                                          <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Palavra pass actual</label>
@@ -223,12 +228,67 @@
 
                                      <div class="text-center">
                                          <button type="submit" class="btn btn-primary">Salvar</button>
-                                         <button type="button" onclick="vue_app.resetPass(<?= $funcionario->id ?>)" class="btn btn-danger"><i class="bi bi-unlock"></i> Reset Password</button>
+                                         <button type="button" onclick="vue_app.resetPass(<?= $funcionario->utilizador ?>)" class="btn btn-danger"><i class="bi bi-unlock"></i> Reset Password</button>
                                      </div>
                                  </form><!-- End Change Password Form -->
 
                              </div>
 
+                             <?php if ($funcionario->cat_id == 2) { ?>
+                                 <div class="tab-pane fade pt-3" id="profile-professor">
+                                     <!-- Change Password Form -->
+                                     <form onsubmit="event.preventDefault();vue_app.editPass(<?= $funcionario->utilizador ?>)">
+                                         <div class="row mb-3">
+                                             <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Disciplina</label>
+                                             <div class="col-md-8 col-lg-9">
+                                                 <select name="disciplina" required id="disciplina" class="form-control">
+                                                     <option>Selecionar Disciplina</option>
+                                                     <?php foreach ($disciplinas_inativo as $key => $value) { ?>
+                                                         <option value="<?= $value->id ?>"><?= $value->nome ?></option>
+                                                     <?php } ?>
+                                                 </select>
+                                             </div>
+                                         </div>
+                                         <div class="text-center">
+                                             <button type="submit" class="btn btn-primary">Salvar</button>
+                                         </div>
+                                     </form><!-- End Change Password Form -->
+
+                                     <div class="card">
+                                         <div class="card-body">
+
+                                             <!-- Table with stripped rows -->
+                                             <table class="table datatable">
+                                                 <thead>
+                                                     <tr>
+                                                         <th scope="col">#</th>
+                                                         <th scope="col">Name</th>
+                                                         <th scope="col">Ano</th>
+                                                         <th scope="col">Curso</th>
+                                                         <th colspan="2" scope="col">Opção</th>
+                                                     </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                     <?php $index = 0;
+                                                        foreach ($disciplinas as $key => $value) {  ?>
+                                                         <tr>
+                                                             <th scope="row"><?= ++$index ?></th>
+                                                             <td><?= $value->nome ?></td>
+                                                             <td><?= $value->ano ?></td>
+                                                             <td><?= $value->curso ?></td>
+                                                             <td><button onclick="vue_app.removeDisciplica(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
+                                                             <td><a href="/escolar/disciplinas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
+                                                         </tr>
+                                                     <?php } ?>
+                                                 </tbody>
+                                             </table>
+                                             <!-- End Table with stripped rows -->
+
+                                         </div>
+                                     </div>
+
+                                 </div>
+                             <?php } ?>
                          </div><!-- End Bordered Tabs -->
 
                      </div>

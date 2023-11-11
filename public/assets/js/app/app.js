@@ -6,10 +6,11 @@ var vue_header = new Vue({
         return {
             email: sessionStorage.email,
             token: sessionStorage.token,
-            firma: sessionStorage.firma,
+            acesso: sessionStorage.acesso,
             nome: sessionStorage.nome,
             foto: sessionStorage.foto,
             id: sessionStorage.id,
+            aluno: sessionStorage.aluno,
             notification: []
         }
     },
@@ -41,16 +42,70 @@ var vue_header = new Vue({
     },
 });
 
+var vue_sider = new Vue({
+    el: '#sidebar',
+    data() {
+        return {
+            email: sessionStorage.email,
+            token: sessionStorage.token,
+            acesso: sessionStorage.acesso,
+            nome: sessionStorage.nome,
+            foto: sessionStorage.foto,
+            id: sessionStorage.id,
+            aluno: sessionStorage.aluno,
+            notification: []
+        }
+    },
+    methods: {
+        logout: async function () {
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }
+            };
+
+            fetch(`/api/logout`, options)
+                .then(response => response.json())
+                .then(response => {
+                    sessionStorage.clear()
+                    location.reload();
+                })
+                .catch(err => console.error(err));
+        }
+    },
+    mounted() {
+        // this.getDashboard()
+    },
+    destroyed() {
+        setTimeout(() => {
+            vue_det.logout();
+        }, 5000);
+    },
+});
 
 var vue_app = new Vue({
     el: '#main',
     data() {
         return {
+            acesso: sessionStorage.acesso,
+            id: sessionStorage.id,
+            aluno: sessionStorage.aluno,
             turmas: [],
             disciplinas: []
         }
     },
     methods: {
+        message: function (response) {
+            switch (key.code) {
+                case 400:
+                    alert(key.message);
+                    break;
+                default:
+                    break;
+            }
+            return;
+        },
         addFuncionario: async function () {
             //return alert(1);
             const form = new FormData();
@@ -80,8 +135,10 @@ var vue_app = new Vue({
                 .then(response => {
                     if (response.code == 200) {
                         location = '/rh/funcionarios/' + response.id;
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -106,8 +163,10 @@ var vue_app = new Vue({
                 .then(response => {
                     if (response.code == 200) {
                         location = '/escolar/cursos/' + response.id;
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -131,8 +190,10 @@ var vue_app = new Vue({
                 .then(response => {
                     if (response.code == 200) {
                         location = '/escolar/disciplinas/' + response.id;
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -174,8 +235,10 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location = '/escolar/alunos/' + response.data[0].id;
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -225,8 +288,60 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location = '/candidaturas/vagas/' + response.data[0].id;
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
+                })
+                .catch(err => console.error(err));
+        },
+        addSala: async function () {
+            const form = new FormData();
+            form.append('nome', document.getElementById('nome').value)
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: form
+            };
+
+            fetch('/api/salas/new', options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location = '/config/salas/' + response.data[0].id;
+                        console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
+                    }
+                })
+                .catch(err => console.error(err));
+        },
+        addTurma: async function () {
+            const form = new FormData();
+            form.append('nome', document.getElementById('nome').value)
+            form.append('sala', document.getElementById('sala').value)
+            form.append('curso', document.getElementById('curso').value)
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: form
+            };
+
+            fetch('/api/turmas/new', options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location = '/config/turmas/' + response.data[0].id;
+                        console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
+                    }
                 })
                 .catch(err => console.error(err));
         },
@@ -263,8 +378,10 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         console.log(response);
                         location.reload();
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -289,8 +406,10 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         console.log(response);
                         location.reload();
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -315,8 +434,10 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         console.log(response);
                         location.reload();
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -352,8 +473,10 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location.reload();
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -378,8 +501,34 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location.reload();
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
+                })
+                .catch(err => console.error(err));
+        },
+        editSala: async function (id) {
+            const form = new FormData();
+            form.append('nome', document.getElementById('nome').value)
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: form
+            };
+
+            fetch('/api/salas/update/' + id, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        //location.reload();
+                        console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
+                    }
                 })
                 .catch(err => console.error(err));
         },
@@ -404,12 +553,63 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location.reload();
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
-        updateDocumentos: async function (id) {
+        editTurma: async function (id) {
+            const form = new FormData();
+            form.append('nome', document.getElementById('nome').value)
+            form.append('sala', document.getElementById('sala').value)
+            form.append('curso', document.getElementById('curso').value)
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: form
+            };
+
+            fetch('/api/turmas/update/' + id, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location.reload();
+                        console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
+                    }
+                })
+                .catch(err => console.error(err));
+        },
+        editCadidato: async function (id) {
+            let formData = document.getElementById('update_candidato');
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                },
+                body: new FormData(formData)
+            };
+
+            fetch('http://localhost:8080/api/candidatos/update/' + id, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location.reload();
+                        console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
+                    }
+                })
+                .catch(err => console.error(err));
+        },
+        updateDocumentos: async function (id, isAluno = true) {
             const form = new FormData();
             form.append('certificado', document.getElementById('certificado').files[0])
             form.append('foto_tipo_pass', document.getElementById('foto_tipo_pass').files[0])
@@ -423,15 +623,23 @@ var vue_app = new Vue({
                     Authorization: `Bearer ${sessionStorage.token}`
                 }, body: form
             };
+            let url;
+            if (isAluno) {
+                url = '/api/alunos/updateImagens/';
+            } else {
+                url = '/api/candidatos/updateImagens/';
+            }
 
-            fetch('/api/alunos/updateImagens/' + id, options)
+            fetch(url + id, options)
                 .then(response => response.json())
                 .then(response => {
                     if (response.code == 200) {
                         location.reload();
                         console.log(response);
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -452,8 +660,10 @@ var vue_app = new Vue({
                     .then(response => {
                         if (response.code == 200) {
                             location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
                         }
-                        console.log(response);
                     })
                     .catch(err => console.error(err));
             } else {
@@ -476,7 +686,12 @@ var vue_app = new Vue({
                 fetch(`/api/cursos/remove/${id}`, options)
                     .then(response => response.json())
                     .then(response => {
-                        return location.reload();
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
                     })
                     .catch(err => console.error(err));
             } else {
@@ -499,7 +714,12 @@ var vue_app = new Vue({
                 fetch(`/api/disciplinas/remove/${id}`, options)
                     .then(response => response.json())
                     .then(response => {
-                        return location.reload();
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
                     })
                     .catch(err => console.error(err));
             } else {
@@ -522,7 +742,12 @@ var vue_app = new Vue({
                 fetch(`/api/provas/remove/${id}`, options)
                     .then(response => response.json())
                     .then(response => {
-                        return location.reload();
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
                     })
                     .catch(err => console.error(err));
             } else {
@@ -532,7 +757,7 @@ var vue_app = new Vue({
         },
         removeVaga: async function (id) {
 
-            let op = confirm('Delesa eliminar esta prova?');
+            let op = confirm('Delesa eliminar esta vaga?');
 
             if (op) {
                 const options = {
@@ -545,7 +770,91 @@ var vue_app = new Vue({
                 fetch(`/api/vagas/remove/${id}`, options)
                     .then(response => response.json())
                     .then(response => {
-                        return location.reload();
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
+                    })
+                    .catch(err => console.error(err));
+            } else {
+                return false;
+            }
+
+        },
+        removeSala: async function (id) {
+
+            let op = confirm('Delesa eliminar esta sala?');
+
+            if (op) {
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${sessionStorage.token}`
+                    }
+                };
+
+                fetch(`/api/salas/remove/${id}`, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
+                    })
+                    .catch(err => console.error(err));
+            } else {
+                return false;
+            }
+
+        },
+        removeTurma: async function (id) {
+            let op = confirm('Delesa eliminar esta turma?');
+
+            if (op) {
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${sessionStorage.token}`
+                    }
+                };
+
+                fetch(`/api/turmas/remove/${id}`, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        if (response.code == 200) {
+                            location.reload();
+                        } else {
+                            alert(response.message);
+                            console.log(response);
+                        }
+                    })
+                    .catch(err => console.error(err));
+            } else {
+                return false;
+            }
+
+        },
+        removeListaCandidatos: async function (id) {
+            let op = confirm('Delesa eliminar esta lista?');
+
+            if (op) {
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${sessionStorage.token}`
+                    }
+                };
+
+                fetch(`/api/vagas/removeAll/${id}`, options)
+                    .then(response => response.json())
+                    .then(response => {
+                        if (response) {
+                            location.reload();
+                        }
                     })
                     .catch(err => console.error(err));
             } else {
@@ -554,7 +863,7 @@ var vue_app = new Vue({
 
         },
         editPass: async function (id) {
-            //return alert(1);
+            //return alert(id);
             const form = new FormData();
 
             let currentPassword = document.getElementById('currentPassword').value;
@@ -582,11 +891,76 @@ var vue_app = new Vue({
                 .then(response => {
                     if (response.code == 200) {
                         location.reload();
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
+                })
+                .catch(err => console.error(err.message));
+        },
+
+        updateEstado: async function (id, estado) {
+
+            let confirmation = confirm(`Vecê deseja ${estado == 1 ? 'aprovar' : 'reprovar'} este candidato?`);
+            if (!confirmation) {
+                return false;
+            }
+
+            const form = new FormData();
+            form.append('estado', estado)
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: form
+            };
+
+            fetch('/api/candidatos/update_estado/' + id, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location.reload();
+                        console.log(response);
+                    }
+                    else {
+                        alert(response.message);
+                        console.log(response);
+                    }
                 })
                 .catch(err => console.error(err));
         },
+
+        matricularCandidato: async function (id) {
+
+            let confirmation = confirm("Vecê deseja Matricular esté este candidato?");
+            if (!confirmation) {
+                return false;
+            }
+
+            let form = document.getElementById('matrucularForm')
+            const options = {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.token}`
+                }, body: new FormData(form)
+            };
+
+            fetch('/api/candidatos/matricuar/' + id, options)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.code == 200) {
+                        location.reload();
+                        console.log(response);
+                    }
+                    else {
+                        alert(response.message);
+                        console.log(response);
+                    }
+                })
+                .catch(err => console.error(err));
+        },
+
         resetPass: async function (id) {
             //return alert(1);
             const options = {
@@ -602,14 +976,18 @@ var vue_app = new Vue({
                     if (response.code == 200) {
                         location.reload();
                     }
-                    console.log(response);
+                    else {
+                        alert(response.message);
+                        console.log(response);
+                    }
                 })
                 .catch(err => console.error(err));
         },
+
         setNota: async function (numero, aluno, prova, value, id) {
 
             let confirmation = confirm('Deseja alterar a nota do Aluno nº ' + numero);
-            if(!confirmation){
+            if (!confirmation) {
                 return;
             }
 
@@ -622,8 +1000,8 @@ var vue_app = new Vue({
             if (id == 'undefined') {
                 id = null;
             }
-            
-            if (typeof id == 'undefined'){
+
+            if (typeof id == 'undefined') {
                 id = null;
             }
 
@@ -644,8 +1022,10 @@ var vue_app = new Vue({
                 .then(response => {
                     if (response.code == 200) {
                         location.reload();
+                    } else {
+                        alert(response.message);
+                        console.log(response);
                     }
-                    console.log(response);
                 })
                 .catch(err => console.error(err));
         },
@@ -660,12 +1040,21 @@ var vue_app = new Vue({
             fetch(`/api/turmas/curso/${id}`, options)
                 .then(response => response.json())
                 .then(response => {
+                    if (response.code != 200) {
+                        alert(response.message);
+                        console.log(response);
+                        return;
+                    }
                     this.turmas = response.data;
                     console.log(response);
+
                 })
                 .catch(err => console.error(err));
         },
         buscarDisciplica: async function (id) {
+            if(id == ''){
+                return false;
+            }
             const options = {
                 method: 'GET',
                 headers: {

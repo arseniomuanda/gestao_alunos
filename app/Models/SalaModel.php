@@ -14,7 +14,7 @@ class SalaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nome', 'descricao'];
+    protected $allowedFields    = ['nome'];
 
     // Dates
     protected $useTimestamps = false;

@@ -40,7 +40,8 @@
                                       <th scope="col">Início</th>
                                       <th scope="col">Fim</th>
                                       <th scope="col">Estado</th>
-                                      <th scope="col">Nº Candidados</th>
+                                      <th scope="col">Total de Vagas</th>
+                                      <th scope="col">Vagas disponíveis</th>
                                       <th scope="col" colspan="2">Opções</th>
                                   </tr>
                               </thead>
@@ -54,6 +55,7 @@
                                           <td><?= $value->fim ?></td>
                                           <td><?= $value->estado == 1 ? 'Aberto' : 'Fechado' ?></td>
                                           <td><?= $value->maximo_candidados ?></td>
+                                          <td><?= (int) $value->maximo_candidados - (int) $value->alunos ?></td>
                                           <td><button onclick="vue_app.removeVaga(<?= $value->id ?>)" class="btn btn-primary"><i class="bi bi-trash"></i></button></td>
                                           <td><a href="/candidaturas/vagas/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>

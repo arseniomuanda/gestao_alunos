@@ -1,0 +1,493 @@
+INFO - 2023-06-04 15:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-04 15:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-04 15:01:49 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:174
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(174): mysqli->real_connect('localhost:8889', 'root', 'root', 'gestao_alunos', 3306, '', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(89): App\Controllers\Login->validar_login('admin@admin.com')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#9 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:218
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Login.php(89): App\Controllers\Login->validar_login('admin@admin.com')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Login->login()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 15:01:49 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 427.
+ 1 SYSTEMPATH/Database/BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Login.php(59): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS total FROM utilizadores WHERE email = \'admin@admin.com\'')
+ 3 APPPATH/Controllers/Login.php(89): App\Controllers\Login->validar_login('admin@admin.com')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Login->login()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+INFO - 2023-06-04 15:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-04 15:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-04 15:15:13 --> Undefined property: stdClass::$nome
+in APPPATH/Views/escolar/perfil/cursos.php on line 158.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(158): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nome', 'APPPATH/Views/escolar/perfil/cursos.php', 158)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(144): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 15:25:00 --> mysqli_sql_exception: Unknown column 'alunos' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT * FROM `...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Cursos.php(142): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 15:25:00 --> Unknown column 'alunos' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Cursos.php(142): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `disciplinas` WHERE alunos = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 15:27:46 --> mysqli_sql_exception: Unknown column 'disciplinas.turma' in 'on clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Cursos.php(142): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 15:27:46 --> Unknown column 'disciplinas.turma' in 'on clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Cursos.php(142): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.*, anos.nome FROM `disciplinas` INNER JOIN anos ON disciplinas.turma = turmas.id WHERE curso = 7')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 16:14:28 --> Undefined variable $funcionarios
+in APPPATH/Views/escolar/perfil/cursos.php on line 179.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(179): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $funcionarios', 'APPPATH/Views/escolar/perfil/cursos.php', 179)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(146): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 16:14:39 --> Undefined property: stdClass::$disciplica
+in APPPATH/Views/escolar/perfil/cursos.php on line 183.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$disciplica', 'APPPATH/Views/escolar/perfil/cursos.php', 183)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(146): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 16:16:03 --> Undefined property: stdClass::$disciplica
+in APPPATH/Views/escolar/perfil/cursos.php on line 183.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$disciplica', 'APPPATH/Views/escolar/perfil/cursos.php', 183)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(146): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 16:16:06 --> Undefined property: stdClass::$disciplica
+in APPPATH/Views/escolar/perfil/cursos.php on line 183.
+ 1 APPPATH/Views/escolar/perfil/cursos.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$disciplica', 'APPPATH/Views/escolar/perfil/cursos.php', 183)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/escolar/perfil/cursos.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('escolar/perfil/cursos', [], true)
+ 5 APPPATH/Controllers/Cursos.php(146): view('escolar/perfil/cursos', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Cursos->perfil('7')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cursos))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:39:28 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'categorias.nome  AS categoria, utilizadores.nome, utilizadores.email, utilizador' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT funciona...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT funciona...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT funciona...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT funciona...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:39:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'categorias.nome  AS categoria, utilizadores.nome, utilizadores.email, utilizador' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT funcionarios.*, categorias.id AS cat_id categorias.nome  AS categoria, utilizadores.nome, utilizadores.email, utilizadores.bi, utilizadores.sexo, utilizadores.telefone, utilizadores.bairro, utilizadores.municipio, utilizadores.rua, utilizadores.n_casa, utilizadores.foto FROM `funcionarios` INNER JOIN `utilizadores` ON funcionarios.utilizador = utilizadores.id INNER JOIN categorias ON funcionarios.categoria = categorias.id WHERE funcionarios.id = 3')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 16:49:13 --> Undefined variable $disciplinas
+in APPPATH/Views/rh/perfil.php on line 246.
+ 1 APPPATH/Views/rh/perfil.php(246): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $disciplinas', 'APPPATH/Views/rh/perfil.php', 246)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/rh/perfil.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('rh/perfil', [], true)
+ 5 APPPATH/Controllers/Funcionarios.php(248): view('rh/perfil', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:52:42 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:52:42 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:53:29 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:53:29 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:54:00 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:54:00 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:55:47 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:55:47 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario = $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:55:48 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:55:48 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario = $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 16:55:49 --> mysqli_sql_exception: Unknown column '$id' in 'where clause' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 16:55:49 --> Unknown column '$id' in 'where clause'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` INNER JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario = $id')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 17:08:51 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.disciplina WHERE professores.funcionario <> 3' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 17:08:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.disciplina WHERE professores.funcionario <> 3' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` LEFT JOIN disciplinas.id = professores.disciplina WHERE professores.funcionario <> 3')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 17:09:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> 3' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 17:09:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> 3' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(246): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.* FROM `disciplinas` LEFT JOIN  ON disciplinas.id = professores.disciplina WHERE professores.funcionario <> 3')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 17:22:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(247): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 17:22:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(247): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.*, professores.funcionario proff FROM `disciplinas` LEFT JOIN professores ON disciplinas.id = professores.disciplina WHERE professores.funcionario !=')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:22:24 --> Undefined variable $disciplinas
+in APPPATH/Views/rh/perfil.php on line 246.
+ 1 APPPATH/Views/rh/perfil.php(246): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $disciplinas', 'APPPATH/Views/rh/perfil.php', 246)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/rh/perfil.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('rh/perfil', [], true)
+ 5 APPPATH/Controllers/Funcionarios.php(250): view('rh/perfil', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 17:27:12 --> mysqli_sql_exception: Unknown column 'professores.funcionario' in 'field list' in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT discipli...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT discipli...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT discipli...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Funcionarios.php(247): CodeIgniter\Database\BaseConnection->query('SELECT discipli...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 17:27:12 --> Unknown column 'professores.funcionario' in 'field list'
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Funcionarios.php(247): CodeIgniter\Database\BaseConnection->query('SELECT disciplinas.*, professores.funcionario proff FROM `disciplinas`;')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->perfil('3')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:47:49 --> Undefined property: stdClass::$curso
+in APPPATH/Views/configuracao/lista/salas.php on line 47.
+ 1 APPPATH/Views/configuracao/lista/salas.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$curso', 'APPPATH/Views/configuracao/lista/salas.php', 47)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/configuracao/lista/salas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/salas', [], true)
+ 5 APPPATH/Controllers/Funcionarios.php(53): view('configuracao/lista/salas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:48:02 --> Undefined property: stdClass::$curso
+in APPPATH/Views/configuracao/lista/salas.php on line 47.
+ 1 APPPATH/Views/configuracao/lista/salas.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$curso', 'APPPATH/Views/configuracao/lista/salas.php', 47)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/configuracao/lista/salas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/salas', [], true)
+ 5 APPPATH/Controllers/Funcionarios.php(53): view('configuracao/lista/salas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:48:04 --> Undefined property: stdClass::$curso
+in APPPATH/Views/configuracao/lista/salas.php on line 47.
+ 1 APPPATH/Views/configuracao/lista/salas.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$curso', 'APPPATH/Views/configuracao/lista/salas.php', 47)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/configuracao/lista/salas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/salas', [], true)
+ 5 APPPATH/Controllers/Funcionarios.php(53): view('configuracao/lista/salas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Funcionarios->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Funcionarios))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:54:27 --> Invalid file: "configuracao/lista/.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('configuracao/lista/.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/', [], true)
+ 3 APPPATH/Controllers/Salas.php(53): view('configuracao/lista/', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Salas->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:54:40 --> Invalid file: "configuracao/lista.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('configuracao/lista.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista', [], true)
+ 3 APPPATH/Controllers/Salas.php(53): view('configuracao/lista', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Salas->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:54:42 --> Invalid file: "configuracao/lista.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('configuracao/lista.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista', [], true)
+ 3 APPPATH/Controllers/Salas.php(53): view('configuracao/lista', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Salas->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Salas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-06-04 17:56:12 --> mysqli_sql_exception: Table 'gestao_alunos.turnas' doesn't exist in /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT * FROM `...', 0)
+#1 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/app/Controllers/Turmas.php(49): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(934): App\Controllers\Turmas->index()
+#5 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Turmas))
+#6 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /Users/arseniomuanda/MyJobs/Joelson/gestao_alunos/system/Commands/Server/rewrite.php(47): require_once('/Users/arseniom...')
+#9 {main}
+CRITICAL - 2023-06-04 17:56:12 --> Table 'gestao_alunos.turnas' doesn't exist
+in SYSTEMPATH/Database/BaseConnection.php on line 645.
+ 1 APPPATH/Controllers/Turmas.php(49): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `turnas`')
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Turmas->index()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Turmas))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:56:34 --> Invalid file: "configuracao/lista/turnas.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('configuracao/lista/turnas.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/turnas', [], true)
+ 3 APPPATH/Controllers/Turmas.php(51): view('configuracao/lista/turnas', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Turmas->index()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Turmas))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-06-04 17:56:47 --> Undefined variable $salas
+in APPPATH/Views/configuracao/lista/turmas.php on line 42.
+ 1 APPPATH/Views/configuracao/lista/turmas.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $salas', 'APPPATH/Views/configuracao/lista/turmas.php', 42)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/configuracao/lista/turmas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('configuracao/lista/turmas', [], true)
+ 5 APPPATH/Controllers/Turmas.php(51): view('configuracao/lista/turmas', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Turmas->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Turmas))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

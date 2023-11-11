@@ -24,19 +24,25 @@
                                       <th scope="col">#</th>
                                       <th scope="col">Nome</th>
                                       <th scope="col">Idade</th>
+                                      <th scope="col">Opção 1</th>
+                                      <th scope="col">Opção 2</th>
                                       <th scope="col">Data de cadastro</th>
                                       <th scope="col">Estado</th>
+                                      <th scope="col">Opção</th>
                                   </tr>
                               </thead>
                               <tbody>
                                   <?php $count = 0;
                                     foreach ($candidatos as $key => $value) { ?>
                                       <tr>
-                                          <th scope="row"><?= $count ?></th>
-                                          <td><?= $count ?></td>
-                                          <td><?= $count ?></td>
-                                          <td><?= $count ?></td>
-                                          <td></td>
+                                          <th scope="row"><?= ++$count ?></th>
+                                          <td><?= $value->nome ?></td>
+                                          <td><?= (int) date('Y') - date('Y', strtotime($value->datanascimento)) ?></td>
+                                          <td><?= $value->opcao1 ?></td>
+                                          <td><?= $value->opcao2 ?></td>
+                                          <td><?= date('d-m-Y', strtotime($value->datanascimento)) ?></td>
+                                          <td><?= $value->estado == 0 ? 'Inscrito' : (($value->estado == 1) ? 'Aprovado' : 'Roprovado') ?></td>
+                                          <td><a href="/candidaturas/candidatos/<?= $value->id ?>" class="btn btn-primary"><i class="bi bi-eye"></i></a></td>
                                       </tr>
                                   <?php  } ?>
                               </tbody>

@@ -51,6 +51,13 @@ class Cursos extends ResourceController
         return view('componentes/header') . view('componentes/sider') . view('escolar/lista/cursos', $data) . view('componentes/footer');
     }
 
+
+    public function listar()
+    {
+        $data =  $this->db->query("SELECT `cursos`.*, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos` FROM `cursos`")->getResult();
+        return $this->respond($data);
+    }
+
     public function add()
     {
         helper('funcao');
@@ -123,6 +130,7 @@ class Cursos extends ResourceController
         $user = getUserToken();
 
         $data = [
+            'code'=> 200,
             'data' => $this->db->query("SELECT * FROM disciplinas WHERE curso = $id")->getResult(),
         ];
 
@@ -136,7 +144,11 @@ class Cursos extends ResourceController
 
     public function perfil($id)
     {
+       
         $data = [
+            'professores'=>  $this->db->query("SELECT funcionarios.*, disciplinas.nome AS disciplina, categorias.nome AS categoria, utilizadores.nome, utilizadores.bi, utilizadores.sexo FROM `funcionarios` INNER JOIN `utilizadores` ON funcionarios.utilizador = utilizadores.id INNER JOIN categorias ON funcionarios.categoria = categorias.id INNER JOIN professores ON funcionarios.id = professores.funcionario INNER JOIN disciplinas ON disciplinas.id = professores.disciplina WHERE disciplinas.curso = $id;")->getResult(),
+            'alunos'=>  $this->db->query("SELECT alunos.*, utilizadores.nome, utilizadores.sexo, turmas.nome AS turma FROM alunos INNER JOIN utilizadores ON alunos.utilizador = utilizadores.id INNER JOIN cursos ON alunos.curso = cursos.id INNER JOIN turmas ON alunos.turma = turmas.id WHERE alunos.curso = $id")->getResult(),
+            'disciplinas'=>  $this->db->query("SELECT disciplinas.*, anos.nome AS ano FROM `disciplinas` INNER JOIN anos ON disciplinas.ano = anos.id WHERE curso = $id")->getResult(),
             'curso' => $this->db->query("SELECT `cursos`.*, (SELECT COUNT(*) FROM `alunos` WHERE `curso` = `cursos`.`id`) AS `qtd_alunos`, (SELECT COUNT(*) FROM `disciplinas` WHERE `curso` = `cursos`.`id`) AS `qtd_disciplinas` FROM `cursos` WHERE `id` = $id")->getRow(0)
         ];
         return view('componentes/header') . view('componentes/sider') . view('escolar/perfil/cursos', $data) . view('componentes/footer');
